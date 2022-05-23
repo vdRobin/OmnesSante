@@ -1,0 +1,35 @@
+html , body{
+	width: 1409px;
+	height:  793px;
+	margin: 0px;
+	padding: 0px;
+	background: #DDE2FF;
+}
+
+#header{
+	background-color: #8FC6F8;
+	padding-block: 36px ;
+	float: center;
+}
+
+#rectangle3 {
+
+	/* Rectangle 3 */
+position: absolute;
+left: 1.82%;
+right: 1.82%;
+top: 3.7%;
+bottom: 77.78%;
+
+background: #8FC6F8;
+}
+
+.logoOmnes{
+position: absolute;
+left: 41.84%;
+right: 41.77%;
+top: 4.58%;
+bottom: 79%;
+width: 231px;
+height: 130px;
+}
