@@ -1,6 +1,6 @@
 html , body{
-	width: 1409px;
-	height:  793px;
+	width: 1280px;
+	height:  720px;
 	margin: 0px;
 	padding: 0px;
 	background: #DDE2FF;
@@ -24,6 +24,28 @@ bottom: 77.78%;
 background: #8FC6F8;
 }
 
+#rectangle4{
+/* Rectangle 4 */
+
+
+position: absolute;
+left: 1.82%;
+right: 1.82%;
+top: 22.22%;
+bottom: 63.89%;
+
+background: #B4DCF2;	
+}
+#rectangle5{
+position: absolute;
+left: 1.82%;
+right: 1.82%;
+top: 89.44%;
+bottom: 3.7%;
+
+background: #B4DCF2;
+}
+
 .logoOmnes{
 position: absolute;
 left: 41.84%;
@@ -32,4 +54,21 @@ top: 4.58%;
 bottom: 79%;
 width: 231px;
 height: 130px;
+}
+.recherche{
+
+position: absolute;
+width: 366.93px;
+height: 74.12px;
+left: 3%;
+top: 24%;
+}
+
+.accueil{
+position: absolute;
+width: 225.88px;
+height: 74.16px;
+left: 439.58px;
+top: 24%;
+
 }
