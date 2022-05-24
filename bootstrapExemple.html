@@ -86,7 +86,12 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="menu.html">Tout parcourir</a>
+            <a class="nav-link active" aria-current="page"><label for="cars">Tout parcourir :</label>
+<select name="choix" id="liste">
+  <option value="medG">Médecin Généraliste</option>
+  <option value="MedSpe">Médecin Spécialiste</option>
+  <option value="labo">Laboratoire biologique médicale</option>
+</select></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Mes rendez-vous</a>
@@ -111,20 +116,19 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
        </div>
+
     <div class="carousel-inner">
+      
+      <!-- Carrousselle 1 -->
       <div class="carousel-item active">
-        <img src="image/medicineUndraw.png" alt="medicineUndraw" height="943" width="1345">
-        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%"  fill="rgb(205, 155, 155)"/></svg> -->
-        
-        
+        <img src="image/medicineUndraw.png" alt="medicineUndraw" height="743" width="1045">
         <div class="container">
-          <div class="carousel-caption text-start">
-            
-            <h1 style="color: rgb(0,0,0)">Example headline.</h1>
-                       <p style="color: rgb(0,0,0)">Some representative place holder content for the first slide of the carousel.</p>
+          <div class="carousel-caption text-end">
+               <h1 style="color: rgb(0,0,0)">Nous sommes à votre écoute</h1>
+                       <p style="color: rgb(0,0,0)">Nos practiciens sont mobilisés au quotidien pour votre santé !</p>
                        <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Recherchez l'amour" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                        <input class="form-control me-2" type="search" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
                           <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
                           <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
                        </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
@@ -132,44 +136,53 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
+       <!-- Carrousselle 2 -->
+      <div class="carousel-item text-end">
+        <img  src="image/videoUndraw.png" alt="videoUndraw" height="560" width="800" >
         <div class="container">
-          <div class="carousel-caption">
+          <div class="carousel-caption text-start">
+            <h1 style="color: rgb(0,0,0)">Nouveauté : consultation en ligne</h1>
+                    <p style="color: rgb(0,0,0)">Nous proposons maintenant des consultations en ligne <br> pour vous obtenir un rendez vous plus rapidement</p>
+                    
+                    <form class="d-flex" role="search">
+                     <input class="form-control me-2" type="search" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
+                     <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
+                       <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
+                       <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
+                    </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
+                   </form>
+       </div>
 
+        </div>
+      </div>
+
+<!-- Carrousselle 2 -->
+      <div class="carousel-item">
+        <img  src="image/PharmaUndraw.png" alt="PharmaUndraw" height="560" width="800" >
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>A venir : Pharmacie en ligne</h1>
+            <p>En juillet 2022, vous pourrez enfin commander vos médicaments grâce à <br>notre pharmacie en ligne, durée de livraison : 1h30</p>
+            
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Recherchez l'amour" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+              <input class="form-control me-2" type="search" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
                 <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
                 <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
              </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
             </form>
-            <h1>Another example headline.</h1>
-            <p>Some representative place holder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>Celia et son pénis énorme</h1>
-            <p>Thomas mange des chibrax au gouté.</p>
-            <p></p>
-            <p><a class="btn btn-lg btn-primary" href="#">batafhsj</a><a class="btn btn-lg btn-primary" href="#">Robin le turlupin</a></p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Flèches pour changer de slides - attention !!! elles sont en blanc ! -->
      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
+      <span class="visually-hidden" >Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <button class="carousel-control-next"  type="button"   data-bs-target="#myCarousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
