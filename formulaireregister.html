@@ -6,25 +6,117 @@
     <meta name="description" content="">
     <meta name="author" content="Scotto celia, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>formulaire OMNES Santé</title>
-
+    <title>Index</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+  <script>
+   
+  $(document).ready(function() {
+   var calendar = $('#calendar').fullCalendar({
+    editable:true,
+    defaultView:'agendaWeek', // Mode d'affichage par défaut
+    height: 500, // Hauteur du calendrier
+    aspectRatio: 0.1,
+
+    header:{
+     left:'prev,next today',
+     center:'title',
+     right:''
+    },
+    events: 'load.php',
+    selectable:true,
+    selectHelper:true,
+
+    select: function(start, end, allDay)
+    {
+     var title = prompt("Enter Event Title");
+     if(title)
+     {
+      var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+      var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+      $.ajax({
+       url:"insert.php",
+       type:"POST",
+       data:{title:title, start:start, end:end},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Added Successfully");
+       }
+      })
+     }
+    },
+    editable:true,
+    eventResize:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function(){
+       calendar.fullCalendar('refetchEvents');
+       alert('Event Update');
+      }
+     })
+    },
+
+    eventDrop:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function()
+      {
+       calendar.fullCalendar('refetchEvents');
+       alert("Event Updated");
+      }
+     });
+    },
+
+    eventClick:function(event)
+    {
+     if(confirm("Are you sure you want to remove it?"))
+     {
+      var id = event.id;
+      $.ajax({
+       url:"delete.php",
+       type:"POST",
+       data:{id:id},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Event Removed");
+       }
+      })
+     }
+    },
+
+   });
+  });
+   
+  </script>
 
     
 
     
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../OmnesSante/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-      <div id="rectangle3">
-  </div>  
-  <div id="rectangle4">
-  </div>
-  <div id="rectangle5">
-  </div>
-  <img class="logoOmnes" src="logo_omnes.png">
-    </style>
+    
 
     
     <!-- Custom styles for this template -->
@@ -35,9 +127,9 @@
 <div class="container">
   <main>
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+      
       <h2>Inscription Omnes Santé</h2>
-      <p class="lead"> Veuillez renseignez tout les onglets pour votre insritpion</p>
+      <p class="lead"> Veuillez renseignez tout les onglets pour votre inscription</p>
     </div>
 
     <div class="row g-5">
@@ -148,6 +240,8 @@
                 rentrer une date disponible.
               </div>
             </div>
+
+            <div id="calendar"></div>
             
 
           <hr class="my-4">
@@ -226,7 +320,7 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">S'inscrire sur OMNES</button>
         </form>
       </div>
     </div>
@@ -243,7 +337,7 @@
 </div>
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../OmnesSante/assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="form-validation.js"></script>
   </body>
