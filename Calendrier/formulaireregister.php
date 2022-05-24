@@ -1,3 +1,8 @@
+
+<?php
+//index.php
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +12,7 @@
     <meta name="author" content="Scotto celia, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
     <title>Index</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -109,6 +114,7 @@
   });
    
   </script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
 
     
 
@@ -240,8 +246,6 @@
                 rentrer une date disponible.
               </div>
             </div>
-
-            <div id="calendar"></div>
             
 
           <hr class="my-4">
