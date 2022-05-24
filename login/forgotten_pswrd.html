@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Page de connexion</title>
+    <title>Mot de passe oublié</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
 
     
@@ -70,45 +70,24 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="forgot_pssw.css" rel="stylesheet">
   </head>
   <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form method="post" action="mail.php">
     <img class="mb-4" src="omnes_sante.png" alt="" width="200" height="200">
-    <h1 class="h3 mb-3 fw-normal">Se connecter</h1>
+    <h1 class="h3 mb-3 fw-normal">Réinitialisation du mot de passe</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Adresse e-mail</label>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Mot de passe</label>
-    </div>
-    <div class="center">
-      <div id="captchaBackground">
-        <canvas id="captcha">captcha text</canvas>
-      <span id="output"></span>
-      </div>
-      </div>
-    <div class="form-floating">
-      <input type="text" class="form-control" id="textBox" placeholder="Captcha">
-  <label for="textBox">Captcha</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Se souvenir de moi
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Se connecter</button>
-    <a href="forgotten_pswrd.html" id="forgot_mdp">Mot de passe oublié ?</a>
+    
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Réinitialiser le mot de passe</button>
     <p class="mt-5 mb-3 text-muted">&copy; Omnes Santé | 2022</p>
   </form>
 </main>
 
-<script src="script.js"></script>
   </body>
 </html>
