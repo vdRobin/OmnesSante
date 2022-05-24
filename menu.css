@@ -3,7 +3,7 @@ html , body{
 	height:  720px;
 	margin: 0px;
 	padding: 0px;
-	background: #DDE2FF;
+	background: #8FC6F8;
 }
 
 #header{
@@ -34,7 +34,7 @@ right: 1.82%;
 top: 22.22%;
 bottom: 63.89%;
 
-background: #B4DCF2;	
+background: #8FC6F8;	
 }
 #rectangle5{
 position: absolute;
@@ -43,7 +43,7 @@ right: 1.82%;
 top: 89.44%;
 bottom: 3.7%;
 
-background: #B4DCF2;
+background: #8FC6F8;
 }
 
 .logoOmnes{
