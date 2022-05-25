@@ -12,7 +12,108 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
 
+<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+  <script>
+   
+  $(document).ready(function() {
+   var calendar = $('#calendar').fullCalendar({
+    editable:true,
+    defaultView:'agendaWeek', // Mode d'affichage par défaut
+    height: 500, // Hauteur du calendrier
+    aspectRatio: 0.1,
 
+    header:{
+     left:'prev,next today',
+     center:'title',
+     right:''
+    },
+    events: 'load.php',
+    selectable:true,
+    selectHelper:true,
+
+    select: function(start, end, allDay)
+    {
+     var title = prompt("Enter Event Title");
+     if(title)
+     {
+      var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+      var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+      $.ajax({
+       url:"insert.php",
+       type:"POST",
+       data:{title:title, start:start, end:end},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Added Successfully");
+       }
+      })
+     }
+    },
+    editable:true,
+    eventResize:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function(){
+       calendar.fullCalendar('refetchEvents');
+       alert('Event Update');
+      }
+     })
+    },
+
+    eventDrop:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function()
+      {
+       calendar.fullCalendar('refetchEvents');
+       alert("Event Updated");
+      }
+     });
+    },
+
+    eventClick:function(event)
+    {
+     if(confirm("Are you sure you want to remove it?"))
+     {
+      var id = event.id;
+      $.ajax({
+       url:"delete.php",
+       type:"POST",
+       data:{id:id},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Event Removed");
+       }
+      })
+     }
+    },
+
+   });
+  });
+   
+  </script>
 
 
 
@@ -148,8 +249,13 @@
         </div>
         <a style="color: rgb(255,255,255)" href="formulaireregister.html">S'inscrire </a>
         <div class="container-fluid">
-          <a href="formulaireregister.html"> <img style="float: right;" src="image/accountCircle.svg" alt="logoOmnes"
-              height="100" width="100"></a>
+          <a href="formulaireregister.html"> <a href="formulaireregister.html">
+            <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="100" height="100" color="#fff"
+              class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /><!-- Code SVG pour le logo account -->
+              <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg></a>
         </div>
       </div>
     </nav>
@@ -170,23 +276,35 @@
       <br> <br> <br> <br>
       <!-- Three columns of text below the carousel -->
       <div class="row">
+        
+        <p> Prénom:
+              <br><br>
+              Nom:
+              <br><br>
+             Numéro de carte vitale:
         <div class="col-lg-7 offset-lg-4 ">
           <svg class="bd-placeholder-img rounded-circle " width="140" height="140" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            <rect width="100%" height="100%" fill="#777" /><a href="formulaireregister.html">
+            <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="140" height="140" color="#fff"
+              class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /><!-- Code SVG pour le logo account -->
+              <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg></a>
           </svg>
+          
+          <h2 class="fw-normal ">VOTRE COMPTE</h2>
 
-          <h2 class="fw-normal">VOTRE COMPTE</h2>
-          <p>Veuillez trouvez ci-joint vos informations ainsi que les créneaux médicaux disponibles.</p>
+          <p><br>Veuillez trouvez ci-joint vos informations ainsi que les créneaux médicaux disponibles.</p>
+          <br>
           <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-          <p> Prénom:
-              <br>
-              Nom:
-              <br>
-             Numéro de carte vitale:
+          
 
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        <div  class="col-lg-5">
+          
+
           
 
           
@@ -210,11 +328,9 @@
           <p class="lead">Remplir les cases à votre disposition </p>
         </div>
         <div class="col-md-5">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-            preserveAspectRatio="xMidYMid slice" focusable="false">
+          
             <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+            <rect width="100%" height="100%" fill="#eee" /><div id="calendar"></div>
           </svg>
 
         
