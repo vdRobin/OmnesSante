@@ -67,48 +67,93 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+       /* css pour le dropDown */
+
+    li {
+      float: left;
+    }
+
+    li a,
+    .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
     </style>
 
     
   </head>
   <body>
     
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">OMNES Santé</h4>
-          <p class="text-muted"></p>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+        <div class="container-fluid">
+          <a href="accueil.html"><img src="image/omnes_labo.png" alt="logoOmnes" height="130" width="250"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Découvrir</a>
+                <div class="dropdown-content">
+                  <a href="#">Médecins Généralistes</a>
+                  <a href="#">Médecins Spécialistes</a>
+                  <a href="LesLabosDeBio.html">Laboratoires biologiques</a>
+                </div>
+              </li>
+              <li class="dropdown">
+                <a class="javascript:void(0)" href="menu.html">Mes rdv</a></li>
+            </ul>
+          </div>
+          <div class="container-fluid">
+            <a href="formulaireregister.html">
+              <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="120" height="120" color="#fff" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><!-- Code SVG pour le logo account -->
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg></a>
+          </div>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Salle: SC-101</a></li>
-            <li><a href="#" class="text-white">Tel: +33 01 22 33 44 55</a></li>
-            <li><a href="#" class="text-white">Email: labo.biologie@omnessante.fr</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Laboratoire de biologie médicale</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
+      </nav>
+    </header>
 
 <main>
 
   <section class="py-5 text-center container">
-    <div class="row py-lg-0.1">
+    <div class="row py-lg-Celia">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Nos services</h1>
         <p class="lead text-muted">Vous trouverez ci-dessous tout nos services mis a disposition pour vous, dans notre laboratoire.</p>
@@ -129,8 +174,8 @@
 
             <div class="card-body">
               <p class="card-text">PRISE ET EXAMEN DU SANG: <br>
-                                    Règles avant: -venir a jein <br>
-                                    Règles pendant: -ne pas stressé</p>
+                                    Règles avant: -venir a jeun <br>
+                                    Règles pendant: -ne pas stresser</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
@@ -150,8 +195,8 @@
             <div class="card-body">
               <p class="card-text">TEST ANTIGENIQUE:
                 <br>
-                Règles avant: porté un masque<br>
-                Règles après: resté confiné si le test est postif</p>
+                Règles avant: porter un masque<br>
+                Règles après: rester confiné si le test est postif</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
