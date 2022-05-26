@@ -23,7 +23,7 @@
 
     
 
-<link href="../login/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -85,6 +85,23 @@
 
     </style>
 
+    <script>
+
+  function isCaptchaChecked() {
+  return grecaptcha && grecaptcha.getResponse().length !== 0;
+}
+
+
+    function recaptchaCallback() {
+        var btnSubmit = document.getElementById("submitBtn");
+
+        if ( btnSubmit.classList.contains("disabled") ) {
+            btnSubmit.classList.remove("disabled");
+        }
+    }
+
+    </script>
+
     
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
@@ -92,30 +109,46 @@
   <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form id="contactForm" method="post" action="tp6.php">
     <a href="../accueil.html"><img class="img-fluid" src="omnes_sante.png" alt="" width="400" height="400"></a>
     <p style="color: white;font-size:200%;">Connexion</p>
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
-      <label for="floatingInput">Adresse e-mail</label>
+    <div class="form-floating-lg">
+      <input type="email" class="form-control-lg" id="floatingEmail" placeholder="name@example.com">
+      
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Mot de passe</label>
+    <div class="form-floating-lg">
+      <input type="password" class="form-control-lg" id="floatingPassword" placeholder="Password">
+      
     </div>
 
   
 
-<div class="g-recaptcha" data-sitekey="6LfRWRwgAAAAAABtIEu3fLrQMOljEfb5LN0YNr9q">r</div>
+<div class="g-recaptcha" data-sitekey="6LfRWRwgAAAAAABtIEu3fLrQMOljEfb5LN0YNr9q" data-callback="recaptchaCallback"></div>
+
+
+
 
     
-    <button class="w-100 btn btn-lg btn-primary" type="submit"></button>
+    <button id="submitBtn" class="w-100 btn btn-lg btn-primary disabled" type="submit" >Se connecter</button>
+
+
+
     <p class="mt-5 mb-3 text-muted">&copy; Omnes Santé | 2022</p>
   </form>
 </main>
 
+
+<script> contactForm.addEventListener('submit', event => { event.preventDefault() validate(contactForm) }); </script>
+
+
 <script src="script.js"></script>
+
+<script> function validate(form) { 
+//perform optional client-side error checking of the form. If no errors are found then request a token and put it into the hidden field. Finally submit the form. 
+getRecaptchaToken(form) } 
+//some (optional) form field validation functions
+ function getRecaptchaToken(form) { grecaptcha.ready(function() { grecaptcha.execute("6LfRWRwgAAAAAABtIEu3fLrQMOljEfb5LN0YNr9q", {action: 'contactForm'}).then(function(token) { gRecaptchaResponse.value = token form.submit() }); }); } </script>
   </body>
 </html>
 
