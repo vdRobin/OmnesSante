@@ -21,6 +21,7 @@
     defaultView:'agendaWeek', // Mode d'affichage par défaut
     height: 300, // Hauteur du calendrier
     aspectRatio: 0.1,
+    locale:'fr';
 
     header:{
        left:'prev,next today',
