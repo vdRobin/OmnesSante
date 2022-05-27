@@ -1,26 +1,50 @@
-<link href="../testlogin/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <?php
 require('config.php');
 session_start();
-echo "chui la avant isset";
-if (isset($_POST["email"])){
+
+if (isset($_POST["email"])) {
+
 	$username = stripslashes($_REQUEST["email"]);
 	$username = mysqli_real_escape_string($conn, $username);
 	$password = stripslashes($_REQUEST["password"]);
 	$password = mysqli_real_escape_string($conn, $password);
-    $query = "SELECT * FROM `utilisateur` WHERE email='$username' and motDePasse='".hash('sha256', $password)."'";
-	$result = mysqli_query($conn,$query) or die(mysql_error());
+	$q = "SELECT * FROM `utilisateur` WHERE email='$username' and motDePasse='" . hash('sha256', $password) . "'";
+	$result = mysqli_query($conn, $q) or die();
 	$rows = mysqli_num_rows($result);
-	if($rows==1){
-	
-	    $_SESSION['email']=$username;
-        $_SESSION['password']=$password;
-        echo "chui la ds le if";
-        header("Location: ../index.html");
-	}else{
+
+
+
+	if ($rows == 1) {
+		while ($row = mysqli_fetch_assoc($result)) {
+			$_SESSION['utilisateurID'] = $row['utilisateurID'];
+			$_SESSION['numCarte'] = $row['numCarte'];
+			$_SESSION['typeUtilisateur'] = $row['typeUtilisateur'];
+			$_SESSION['nom'] = $row['nom'];
+			$_SESSION['prenom'] = $row['prenom'];
+			$_SESSION['specialite'] = $row['specialite'];
+			$_SESSION['CV'] = $row['CV'];
+			$_SESSION['ville'] = $row['ville'];
+			$_SESSION['codePostal'] = $row['codePostal'];
+			$_SESSION['pays'] = $row['pays'];
+			$_SESSION['telephone'] = $row['telephone'];
+			$_SESSION['email'] = $row['email'];
+			$_SESSION['disponibilite'] = $row['disponibilite'];
+			$_SESSION['carteVitale'] = $row['carteVitale'];
+			$_SESSION['photo'] = $row['photo'];
+		}
+		if ($_SESSION['typeUtilisateur'] == 1) {
+			header("Location: ../CompteClient.php");
+
+		} else if ($_SESSION['typeUtilisateur'] == 2) { 
+			header("Location: ../CompteMedecin.php");
+		} else if ($_SESSION['typeUtilisateur'] == 3) { 
+			header("Location: ../CompteMedecin.php");
+		}else{
+			header("Location: ../index.php");
+		}
+
+	} else {
 		$message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
-        echo $message;
+		header("Location: ../index.php");
 	}
 }
-?>
