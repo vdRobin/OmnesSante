@@ -20,6 +20,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
   <script>
    
   $(document).ready(function() {
@@ -28,13 +29,14 @@
     defaultView:'agendaWeek', // Mode d'affichage par défaut
     height: 500, // Hauteur du calendrier
     aspectRatio: 0.1,
+    locale:'fr',
 
     header:{
      left:'prev,next today',
      center:'title',
      right:''
     },
-    events: 'load.php',
+    events: 'loadDispo.php',
     selectable:true,
     selectHelper:true,
 
@@ -46,7 +48,7 @@
       var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
       var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
       $.ajax({
-       url:"insert.php",
+       url:"insertDispo.php",
        type:"POST",
        data:{title:title, start:start, end:end},
        success:function()
@@ -65,7 +67,7 @@
      var title = event.title;
      var id = event.id;
      $.ajax({
-      url:"update.php",
+      url:"updateDispo.php",
       type:"POST",
       data:{title:title, start:start, end:end, id:id},
       success:function(){
@@ -82,7 +84,7 @@
      var title = event.title;
      var id = event.id;
      $.ajax({
-      url:"update.php",
+      url:"updateDispo.php",
       type:"POST",
       data:{title:title, start:start, end:end, id:id},
       success:function()
@@ -99,7 +101,7 @@
      {
       var id = event.id;
       $.ajax({
-       url:"delete.php",
+       url:"deleteDispo.php",
        type:"POST",
        data:{id:id},
        success:function()
@@ -286,12 +288,12 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-        <div class="col-md-7">
+        <div class="col-md-5">
           <h2 class="featurette-heading fw-normal lh-1"> Emplois du temps. <span class="text-muted">
           (suivant vos diponibilités).</span></h2>
           <p class="lead">Modifier si vous avez un empêchement </p>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-7">
           
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#eee" /><div id="calendar"></div>
