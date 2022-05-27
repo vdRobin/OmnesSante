@@ -114,7 +114,7 @@
 
     
 
-<link href="../OmnesSante/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
 
     
 

@@ -120,7 +120,7 @@
 
     
 
-<link href="../OmnesSante/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
 
     
 
@@ -341,7 +341,7 @@
 </div>
 
 
-    <script src="../OmnesSante/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="form-validation.js"></script>
   </body>

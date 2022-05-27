@@ -16,7 +16,7 @@
 
 
 
-  <link href="../OmnesSante/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
   <!-- css pour le bootstrap -->
   <style>
     .bd-placeholder-img {
@@ -116,7 +116,6 @@
   </style>
 
 
-
   <!-- Custom styles for this template -->
   <!-- <link rel="stylesheet" href=
   "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -125,16 +124,14 @@
       crossorigin="anonymous"> -->
   <link href="carousel.css" rel="stylesheet">
 
-  
 </head>
 
 <body>
-  <script src="google-api url"></script><!--  -->
 
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
       <div class="container-fluid">
-        <a href="accueil.html"><img src="image/logo_omnes.png" alt="logoOmnes" height="100" width="190"></a>
+        <a href="index.html"><img src="image/logo_omnes.png" alt="logoOmnes" height="100" width="190"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
           aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -145,34 +142,32 @@
 
               <a href="javascript:void(0)" class="dropbtn my-2">Découvrir</a>
               <div class="dropdown-content">
-                <a href="MedecinGeneral.html">Médecins Généralistes</a>
+                <a href="#">Médecins Généralistes</a>
                 <a href="MedecinSpe.html">Médecins Spécialistes</a>
                 <a href="LesLabosDeBio.html">Laboratoires biologiques</a>
               </div>
             <li class="my-2"><a style="color: rgb(255,255,255)" href="formulaireregister.html">S'inscrire </a></li>
-
+            
             </li>
           </ul>
         </div>
 
         <div class="container-fluid">
-          <a href="login/login.html">
-            <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="100" height="100" color="#fff"
-              class="bi bi-person-circle" viewBox="0 0 16 16">
+          <a href="login/login.html"> 
+            <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="100" height="100" color="#fff"class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /><!-- Code SVG pour le logo account -->
-              <path fill-rule="evenodd"
-                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
             </svg>
-            <li class="dropbtn my-md-1 mt-xl-0  float-xl-end">Mon Compte</a></li>
+          <p style="float: right;"color="#fff">Mon Compte
+          </p></a>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- FIN NAVBAR
-  ================================================== 
-          DEBUT CARROUSSEL-->
   <main>
+
+
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -183,6 +178,7 @@
       </div>
 
       <div class="carousel-inner">
+
         <!-- Carrousselle 1 -->
         <div class="carousel-item active">
           <img src="image/medicineUndraw.png" alt="medicineUndraw" height="743" width="1045">
@@ -253,7 +249,7 @@
         </div>
       </div>
 
-      <!-- Flèches pour changer de slides -->
+      <!-- Flèches pour changer de slides - attention !!! elles sont en blanc ! -->
       <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -265,9 +261,9 @@
     </div>
 
 
-    <!-- Fin Carroussel
+    <!-- Marketing messaging and featurettes
   ================================================== -->
-    <!-- Début des CV  -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
 
@@ -278,16 +274,13 @@
           <h2 class="fw-normal">DR.Pascal KANGOO</h2>
           <p>Elue Médecin Généraliste du mois d'avril 2022 dans votre région!</p>
           <!-- Button to launch a modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir CV</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Voir CV</button>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <!--zone d'ombre autour de la fenetre-->
-            <div class="modal-dialog" role="document">
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> <!--zone d'ombre autour de la fenetre-->
+            <div class="modal-dialog" role="document" >
               <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_pascal_kangoo.png" alt="Click on button"
-                    height="700" width="600" /></div>
-                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
+                <div class="modal-body"><img id="image" src="image/cv_pascal_kangoo.png" alt="Click on button" height="700" width="600" /></div>
+                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button></div>
               </div>
             </div>
           </div>
@@ -296,93 +289,99 @@
         <div class="col-lg-4">
 
           <img src="image/megane.png" alt="maboul" height="150" width="150">
-
+          
           <h2 class="fw-normal">DR.Mégane COUPEE</h2>
           <p>Disponible 24h/24 le Weekend pour une consultation en visioconférence</p>
-          <!-- Button to launch a modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
-            CV</button>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button"
-                    height="700" width="600" /></div>
-                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
-              </div>
-            </div>
-          </div>
+                    <!-- Button to launch a modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1"> Voir CV</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button" height="700" width="600" /></div>
+                          <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button></div>
+                        </div>
+                      </div>
+                    </div>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
           <img src="image/maboul.png" alt="maboul" height="150" width="150">
 
           <h2 class="fw-normal">DR.Emma BOUL</h2>
-          <p>Ce jeune médecin vient de s'installer dans la région ! Soutenez le via sa cagnotte leechee :)</p>
-<!-- Button to launch a modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
-  CV</button>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button"
-          height="700" width="600" /></div>
-      <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
-    </div>
-  </div>
-</div>
-</div><!-- /.col-lg-4 -->
+          <p>Ce jeune médecin vient de s'installer dans la région ! </p>
+          <p><a class="btn btn-secondary" href="#">oupss &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 
       <!-- START THE FEATURETTES -->
-      <!-- featurette 1 -->
+
       <hr class="featurette-divider">
+
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">Le virus circule toujours !</h2>
-          <p class="lead">Ne baissez pas votre garde, le virus est toujours la, continuez d'appliquer ces gestes barrière. Venez vous faire tester en pharmacie ou dans nos centre au moindre signe de fièvre.</p>
+          <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-muted">It’ll blow
+              your mind.</span></h2>
+          <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose
+            here.</p>
         </div>
         <div class="col-md-5">
-          <img id="image" src="image/covidPrevention.jpg" alt="Click on button" width="500" height="500">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+          </svg>
 
         </div>
       </div>
 
-      <!-- featurette 2 -->
       <hr class="featurette-divider">
+
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">Omnes Santé est le nouveau leader mondial de la santé.  </h2>
-          <p class="lead">Nos spécialitées sont très variées : Andrologie, Gynécologie, Dermatologie, Addictologie...
-            Nos spécialistes sont formés pour vous accompagner au mieux dans votre cursus. Laissez vous le temps de vous balader sur ce site internet pour en apprendre d'avantage sur notre compagnie.</p>
+          <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-muted">See for
+              yourself.</span></h2>
+          <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this
+            layout would work with some actual real-world content in place.</p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img id="image" src="image/pharmacie.jpg" alt="Click on button" width="500" height="500">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+          </svg>
 
         </div>
       </div>
 
-      <!-- featurette 3 -->
       <hr class="featurette-divider">
+
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">Nos centres Santé au plus proche de vous.</span>
+          <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-muted">Checkmate.</span>
           </h2>
-          <p class="lead">Notre plus gros centre se trouve en plein coeur de la mégalopole parisienne au 43 Quai de Grenelle, 75015 Paris. Notre centre est ouvert toute l'année, 7j/7 de 8h à 22h.Vous pouvez contacter notre service patient au 07 68 70 46 77.</p>
+          <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really
+            intended to be actually read, simply here to give you a better view of what this would look like with some
+            actual content. Your content.</p>
         </div>
-        <div class="col-md-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.367509221572!2d2.282633475367155!3d48.85120200953895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcda73a49149d471f!2sOMNES%20Education!5e0!3m2!1sfr!2sfr!4v1653569207672!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="col-md-5">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+          </svg>
+
         </div>
       </div>
 
-      
-
       <hr class="featurette-divider">
 
-      <!-- FIN DES FEATURETTES -->
+      <!-- /END THE FEATURETTES -->
+
     </div><!-- /.container -->
 
 
@@ -393,16 +392,24 @@
     </footer>
   </main>
 
-  <script src="../OmnesSante/assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity=
+"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous">
+	</script>
+	<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity=
+"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous">
+	</script>
+	<script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity=
+"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous">
+	</script>
 
 </body>
 

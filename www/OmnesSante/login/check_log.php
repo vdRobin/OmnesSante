@@ -17,7 +17,7 @@ if (isset($_POST["email"])){
 	    $_SESSION['email']=$username;
         $_SESSION['password']=$password;
         echo "chui la ds le if";
-        header("Location: ../accueil.html");
+        header("Location: ../index.html");
 	}else{
 		$message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
         echo $message;
