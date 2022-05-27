@@ -218,7 +218,6 @@
 
           <div class="form-check">
             <input type="file" id="same-address" name="cv">
-            <input type="submit">
           </div>
 
         
