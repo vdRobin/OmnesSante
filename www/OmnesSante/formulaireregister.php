@@ -75,6 +75,9 @@
             // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           $specialite = stripslashes($_REQUEST['specialite']);
           $specialite = mysqli_real_escape_string($conn, $specialite);
+          // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
+          $upload_cv = stripslashes($_REQUEST['cv']);
+          $upload_cv = mysqli_real_escape_string($conn, $upload_cv);
             // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           $nb_vitale = stripslashes($_REQUEST['nb_vitale']);
           $nb_vitale = mysqli_real_escape_string($conn, $nb_vitale);
@@ -95,8 +98,8 @@
           $type_catre_credit = mysqli_real_escape_string($conn, $type_carte_credit);
           //requéte SQL + mot de passe crypté
             $query1= "INSERT INTO `cartebancaire`(`numCarte`, `type`, `proprietaire`, `dateExp`, `CVV`) VALUES ('$num_carte_credit','$type_carte_credit','$nom_carte_credit','$exp_carte_credit','$cvv_carte_credit')";
-            $query2 = "INSERT INTO `utilisateur`(`numCarte`, `typeUtilisateur`, `nom`, `prenom`, `specialite`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `carteVitale`, `motDePasse`) 
-            VALUES ('$num_carte_credit','$type_util','$nom_famille','$prenom','$specialite','$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
+            $query2 = "INSERT INTO `utilisateur`(`numCarte`, `typeUtilisateur`, `nom`, `prenom`, `specialite`, `CV`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `carteVitale`, `motDePasse`) 
+            VALUES ('$num_carte_credit','$type_util','$nom_famille','$prenom','$specialite', '$upload_cv', '$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
           // Exécute la requête sur la base de données
             $res = mysqli_query($conn, $query1);
             $res = mysqli_query($conn, $query2);
@@ -211,9 +214,11 @@
 
           <hr class="my-4">
 
+          <h4 class="mb-3">Déposez votre CV</h4>
+
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address" name="cv">
-            <label class="form-check-label" for="same-address">Déposer votre CV</label>
+            <input type="file" id="same-address" name="cv">
+            <input type="submit">
           </div>
 
         
