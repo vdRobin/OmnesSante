@@ -15,6 +15,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
     
+<style>
+
+.b-example-divider {
+      height: 3rem;
+      background-color: rgb(143, 198, 248);
+      border: solid #8FC6F8;
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em #8FC6F8, inset 0 .125em .5em#8FC6F8;
+    }
+
+</style>
+
 
 <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
 
@@ -26,9 +38,9 @@
   </head>
   <body class="bg-light">
     
-<div class="container">
+<div class="container ">
   <main>
-    <div class="py-5 text-center">
+    <div class="py-5 text-center ">
       
       <h2>Inscription Omnes Santé</h2>
       <p class="lead"> Veuillez renseignez tout les onglets pour votre inscription</p>
@@ -45,6 +57,17 @@
         <?php
         require('config.php');
         if (isset($_REQUEST['prenom'])){
+
+if($_REQUEST['util_type']=="Client"){
+  $_REQUEST['util_type']=1;
+}
+if($_REQUEST['util_type']=="Administrateur"){
+  $_REQUEST['util_type']=2;
+}
+if($_REQUEST['util_type']=="Professionnel de santé"){
+  $_REQUEST['util_type']=3;
+}
+
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           $prenom = stripslashes($_REQUEST['prenom']);
           $prenom = mysqli_real_escape_string($conn, $prenom);
@@ -103,11 +126,13 @@
           // Exécute la requête sur la base de données
             $res = mysqli_query($conn, $query1);
             $res = mysqli_query($conn, $query2);
+            echo $query1;
+            echo $query2;
 
             if($res){
                echo "<div class='sucess'>
                      <h3>Vous êtes inscrit avec succès.</h3>
-                     <p>Cliquez ici pour vous <a href='login/login.html'>connecter</a></p>
+                     <p>Cliquez ici pour vous <a href='index.php'>connecter</a></p>
                </div>";
             }
         }else{

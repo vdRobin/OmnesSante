@@ -1,6 +1,3 @@
-<?php
-// login.php
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,6 +9,17 @@
     <title>Page de connexion</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+
+
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfRWRwgAAAAAABtIEu3fLrQMOljEfb5LN0YNr9q"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+</script>
+
 
     
 
@@ -70,6 +78,8 @@
       }
       .captcha{
         padding: 0;
+        color: white;
+        font-size: 300%;
       }
 
 
@@ -82,22 +92,38 @@
   <body class="text-center">
     
 <main class="form-signin w-100 m-auto">
-  <form>
-    <img class="mb-4" src="omnes_sante.png" alt="" width="200" height="200">
-    <h1 class="h3 mb-3 fw-normal">Se connecter</h1>
+  <form method="post" action="check_log.php">
+    <a href="../index.html"><img class="img-fluid" src="omnes_sante.png" alt="" width="400" height="400"></a>
+    <p style="color: white;font-size:200%;">Connexion</p>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="name@example.com">
       <label for="floatingInput">Adresse e-mail</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword"  name="password"placeholder="Password">
       <label for="floatingPassword">Mot de passe</label>
     </div>
-    <div class="center">
+
+  
+
+<div class="g-recaptcha" data-sitekey="6LfRWRwgAAAAAABtIEu3fLrQMOljEfb5LN0YNr9q"></div>
+
+    
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Se connecter</button>
+    <p class="mt-5 mb-3 text-muted">&copy; Omnes Santé | 2022</p>
+  </form>
+</main>
+
+<script src="script.js"></script>
+  </body>
+</html>
+
+<!--
+<div class="center">
       <div id="captchaBackground">
         <canvas id="captcha">captcha text</canvas>
-      <!--<span id="output"></span>-->
+      <span id="output"></span>
       </div>
       </div>
     <div class="form-floating">
@@ -109,12 +135,4 @@
       <label>
         <input type="checkbox" value="remember-me"> Se souvenir de moi
       </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" action="traitementlogin.php">Se connecter</button>
-    <p class="mt-5 mb-3 text-muted">&copy; Omnes Santé | 2022</p>
-  </form>
-</main>
-
-<script src="script.js"></script>
-  </body>
-</html>
+    </div>-->
