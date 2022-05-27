@@ -36,7 +36,7 @@ if (isset($_POST["email"])) {
 			header("Location: ../CompteClient.php");
 
 		} else if ($_SESSION['typeUtilisateur'] == 2) { 
-			header("Location: ../CompteMedecin.php");
+			header("Location: ../CompteAdmin.php");
 		} else if ($_SESSION['typeUtilisateur'] == 3) { 
 			header("Location: ../CompteMedecin.php");
 		}else{

@@ -262,11 +262,9 @@
           
           <h2 class="fw-normal">VOTRE COMPTE</h2>
 
-          <p><br>Veuillez trouvez ci-joint vos accréditations.</p>
+          <p><br>Voici la liste des médecins :</p>
           <br>
-          <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-          <p><a class="btn btn-secondary" href="afficherMedecins.php">Voir les médecins &raquo;</a></p>
-          <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
+          
           
 
         </div><!-- /.col-lg-4 -->

@@ -21,105 +21,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
-  <script>
-   
-  $(document).ready(function() {
-   var calendar = $('#calendar').fullCalendar({
-    editable:true,
-    defaultView:'agendaWeek', // Mode d'affichage par défaut
-    height: 500, // Hauteur du calendrier
-    aspectRatio: 0.1,
-    locale:'fr',
-
-    header:{
-     left:'prev,next today',
-     center:'title',
-     right:''
-    },
-    events: 'loadDispo.php',
-    selectable:true,
-    selectHelper:true,
-
-    select: function(start, end, allDay)
-    {
-     var title = prompt("Enter Event Title");
-     if(title)
-     {
-      var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-      var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-      $.ajax({
-       url:"insertDispo.php",
-       type:"POST",
-       data:{title:title, start:start, end:end},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Added Successfully");
-       }
-      })
-     }
-    },
-    editable:true,
-    eventResize:function(event)
-    {
-     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-     var title = event.title;
-     var id = event.id;
-     $.ajax({
-      url:"updateDispo.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id},
-      success:function(){
-       calendar.fullCalendar('refetchEvents');
-       alert('Event Update');
-      }
-     })
-    },
-
-    eventDrop:function(event)
-    {
-     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-     var title = event.title;
-     var id = event.id;
-     $.ajax({
-      url:"updateDispo.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id},
-      success:function()
-      {
-       calendar.fullCalendar('refetchEvents');
-       alert("Event Updated");
-      }
-     });
-    },
-
-    eventClick:function(event)
-    {
-     if(confirm("Are you sure you want to remove it?"))
-     {
-      var id = event.id;
-      $.ajax({
-       url:"deleteDispo.php",
-       type:"POST",
-       data:{id:id},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Event Removed");
-       }
-      })
-     }
-    },
-
-   });
-  });
-   
-  </script>
-
-
-
   <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
   <!-- css pour le bootstrap -->
   <style>
@@ -262,25 +163,52 @@
           
           <h2 class="fw-normal">VOTRE COMPTE</h2>
 
-          <p><br>Veuillez trouvez ci-joint vos accréditations.</p>
+          <p><br>Voici la liste des médecins :</p>
           <br>
-          <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-          <p><a class="btn btn-secondary" href="afficherMedecins.php">Voir les médecins &raquo;</a></p>
-          <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-          
 
+          <?php
+
+          require('config.php');
+
+  $q = "SELECT * FROM `utilisateur` WHERE typeUtilisateur=2";
+  $result = mysqli_query($conn, $q) or die();
+  $rows = mysqli_num_rows($result);
+
+  while ($row=mysqli_fetch_assoc($result)) {
+      echo "ID: ".$row['utilisateurID'].'<br>';
+      echo "nom: ".$row['nom'].'<br>';
+      echo "prenom: ".$row['prenom'].'<br>';
+      echo "specialite: ".$row['specialite'].'<br><br>';
+
+      /*$_SESSION['numCarte'] = $row['numCarte'];
+      $_SESSION['typeUtilisateur'] = $row['typeUtilisateur'];
+      $_SESSION['nom'] = $row['nom'];
+      $_SESSION['prenom'] = $row['prenom'];
+      $_SESSION['specialite'] = $row['specialite'];
+      $_SESSION['CV'] = $row['CV'];
+      $_SESSION['ville'] = $row['ville'];
+      $_SESSION['codePostal'] = $row['codePostal'];
+      $_SESSION['pays'] = $row['pays'];
+      $_SESSION['telephone'] = $row['telephone'];
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['disponibilite'] = $row['disponibilite'];
+      $_SESSION['carteVitale'] = $row['carteVitale'];
+      $_SESSION['photo'] = $row['photo'];*/
+    }
+          ?>
+
+          //https://stackoverflow.com/questions/62573506/populating-a-bootstrap-dropdown-from-an-ms-sql-database
+
+          <p><a class="btn btn-secondary" href="#">Modifier le médecin selectionné &raquo;</a></p>
+          <p><a class="btn btn-secondary" href="#">Supprimer le médecin &raquo;</a></p>
+          <p><a class="btn btn-secondary" href="#">Ajouter un médecin &raquo;</a></p>
+          
         </div><!-- /.col-lg-4 -->
         <div  class="col-lg-5">
-          
-
-          
-
-          
+        
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          
-
-          
+        
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -289,26 +217,7 @@
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-5">
-          <h2 class="featurette-heading fw-normal lh-1"> Emplois du temps. <span class="text-muted">
-          (suivant vos diponibilités).</span></h2>
-          <p class="lead">Modifier si vous avez un empêchement </p>
-        </div>
-        <div class="col-md-7">
-          
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" /><div id="calendar"></div>
-          </svg>
-
-        
-        
-      </div>
-
       <hr class="featurette-divider">
-
-      
-        
 
       <hr class="featurette-divider">
 
