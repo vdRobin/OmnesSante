@@ -44,7 +44,8 @@ if (isset($_POST["email"])) {
 		}
 
 	} else {
-		$message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
-		header("Location: ../index.php");
+		header("Location: ../login/wrongPassword.php");
 	}
-}
+	}
+	?>
+

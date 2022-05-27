@@ -99,8 +99,8 @@ if($_REQUEST['util_type']=="Professionnel de santé"){
           $specialite = stripslashes($_REQUEST['specialite']);
           $specialite = mysqli_real_escape_string($conn, $specialite);
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $upload_cv = stripslashes($_REQUEST['cv']);
-          $upload_cv = mysqli_real_escape_string($conn, $upload_cv);
+          //$upload_cv = stripslashes($_REQUEST['cv']);
+          //$upload_cv = mysqli_real_escape_string($conn, $upload_cv);
             // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           $nb_vitale = stripslashes($_REQUEST['nb_vitale']);
           $nb_vitale = mysqli_real_escape_string($conn, $nb_vitale);
@@ -121,13 +121,51 @@ if($_REQUEST['util_type']=="Professionnel de santé"){
           $type_catre_credit = mysqli_real_escape_string($conn, $type_carte_credit);
           //requéte SQL + mot de passe crypté
             $query1= "INSERT INTO `cartebancaire`(`numCarte`, `type`, `proprietaire`, `dateExp`, `CVV`) VALUES ('$num_carte_credit','$type_carte_credit','$nom_carte_credit','$exp_carte_credit','$cvv_carte_credit')";
-            $query2 = "INSERT INTO `utilisateur`(`numCarte`, `typeUtilisateur`, `nom`, `prenom`, `specialite`, `CV`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `carteVitale`, `motDePasse`) 
-            VALUES ('$num_carte_credit','$type_util','$nom_famille','$prenom','$specialite', '$upload_cv', '$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
+            $query2 = "INSERT INTO `utilisateur`(`numCarte`, `typeUtilisateur`, `nom`, `prenom`, `specialite`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `carteVitale`, `motDePasse`) 
+            VALUES ('$num_carte_credit','$type_util','$nom_famille','$prenom','$specialite', '$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
+
+
+
+
+              // Code insertion fichier
+  /*$filename = $_FILES["cv"]["name"];
+  $tempname = $_FILES["cv"]["tmp_name"];
+  $folder = "image/".$filename;
+
+    // Get all the submitted data from the form
+    $sql = "INSERT INTO image (filename) VALUES ('$filename')";
+
+    // Execute query
+    mysqli_query($conn, $sql);
+    
+    // Now let's move the uploaded image into the folder: image
+    if (move_uploaded_file($tempname, $folder)) {
+      $msg = "Image uploaded successfully";
+    }else{
+      $msg = "Failed to upload image";
+  }*/
+
+  //declare variables
+$image = $_FILES['cv']['tmp_name'];
+$name = $_FILES['cv']['name'];
+$image = file_get_contents(addslashes($image));
+ 
+$sqlInsertimageintodb = "INSERT INTO `utilisateur`(`CV`) VALUES ('{$image}')";
+
+if (mysqli_query($conn, $sqlInsertimageintodb)) {
+echo "<br />Image uploaded successfully.";
+} else {
+echo "<br />Image Failed to upload.<br />";
+}
           // Exécute la requête sur la base de données
             $res = mysqli_query($conn, $query1);
             $res = mysqli_query($conn, $query2);
             echo $query1;
             echo $query2;
+            echo "Name :".$name.'<br>';
+            echo "image:".$image.'<br>';
+            echo "Requete SQL:".$sqlInsertimageintodb.'<br>';
+            //echo $msg;
 
             if($res){
                echo "<div class='sucess'>
@@ -138,7 +176,7 @@ if($_REQUEST['util_type']=="Professionnel de santé"){
         }else{
         ?>
 
-<form action="formulaireregister.php" method="post">
+<form action="formulaireregister.php" method="post" enctype="multipart/form-data">
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Prénom</label>
