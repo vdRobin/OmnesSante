@@ -241,13 +241,13 @@
       <br> <br> <br> <br>
       <div class="row">
         
-        <p> Docteur: 	<?php print $_SESSION['nom']." ".$_SESSION['prenom'];?>
+        <p> Administrateur: 	<?php print $_SESSION['nom']." ".$_SESSION['prenom'];?>
               <br><br>
-            Spécialité: <?php echo $_SESSION['prenom'];?>
+            Nom: <?php echo $_SESSION['prenom'];?>
               <br><br>
-            Laboratoire: <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($_SESSION['photo'] ).'"/>';?>
+            Couriel: <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($_SESSION['photo'] ).'"/>'
              <br><br>
-            CV:
+            
         <div class="col-lg-7 offset-lg-4 ">
           <svg class="bd-placeholder-img rounded-circle " width="140" height="140" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -262,7 +262,7 @@
           
           <h2 class="fw-normal">VOTRE COMPTE</h2>
 
-          <p><br>Veuillez trouvez ci-joint vos informations ainsi que votre emplois du temps.</p>
+          <p><br>Veuillez trouvez ci-joint vos accréditations.</p>
           <br>
           <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
           
