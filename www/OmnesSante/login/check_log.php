@@ -3,7 +3,6 @@
 <?php
 require('config.php');
 session_start();
-echo "chui la avant isset";
 if (isset($_POST["email"])){
 	$username = stripslashes($_REQUEST["email"]);
 	$username = mysqli_real_escape_string($conn, $username);
@@ -16,7 +15,6 @@ if (isset($_POST["email"])){
 	
 	    $_SESSION['email']=$username;
         $_SESSION['password']=$password;
-        echo "chui la ds le if";
         header("Location: ../index.html");
 	}else{
 		$message = "Le nom d'utilisateur ou le mot de passe est incorrect.";

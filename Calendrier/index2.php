@@ -13,15 +13,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
   <script>
 
       $(document).ready(function() {
          var calendar = $('#calendar').fullCalendar({
             editable:true,
     defaultView:'agendaWeek', // Mode d'affichage par défaut
-    height: 300, // Hauteur du calendrier
-    aspectRatio: 0.1,
-    locale:'fr';
+    height: 500, // Hauteur du calendrier
+    aspectRatio: 1,
+    locale:'fr',
 
     header:{
        left:'prev,next today',
