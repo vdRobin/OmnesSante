@@ -87,7 +87,7 @@
                             <a href="MedecinSpe.php">Médecins Spécialistes</a>
                             <a href="LesLabosDeBio.php">Laboratoires biologiques</a>
                         </div>
-                    <li class="my-2"><a style="color: rgb(255,255,255)" href="formulaireregister.html">S'inscrire </a></li>
+                    <li class="my-2"><a style="color: rgb(255,255,255)" href="formulaireregister.php">S'inscrire </a></li>
                     </li>
                 </ul>
             </div>

@@ -358,7 +358,7 @@
     <!-- FOOTER -->
     <footer class="container">
       <p class="float-end"><a href="#">Back to top</a></p>
-      <p>&copy; 2022 OMNES-Santé. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      <p>&copy; 2022 OMNES-Santé. &middot; <a href="contact.php">Nous contacter</a> &middot; <a href="#">Terms</a></p>
     </footer>
   </main>
 
