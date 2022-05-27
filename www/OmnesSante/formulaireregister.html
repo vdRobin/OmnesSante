@@ -14,104 +14,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-  <script>
-   
-  $(document).ready(function() {
-   var calendar = $('#calendar').fullCalendar({
-    editable:true,
-    defaultView:'agendaWeek', // Mode d'affichage par défaut
-    height: 500, // Hauteur du calendrier
-    aspectRatio: 0.1,
-
-    header:{
-     left:'prev,next today',
-     center:'title',
-     right:''
-    },
-    events: 'load.php',
-    selectable:true,
-    selectHelper:true,
-
-    select: function(start, end, allDay)
-    {
-     var title = prompt("Enter Event Title");
-     if(title)
-     {
-      var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-      var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-      $.ajax({
-       url:"insert.php",
-       type:"POST",
-       data:{title:title, start:start, end:end},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Added Successfully");
-       }
-      })
-     }
-    },
-    editable:true,
-    eventResize:function(event)
-    {
-     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-     var title = event.title;
-     var id = event.id;
-     $.ajax({
-      url:"update.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id},
-      success:function(){
-       calendar.fullCalendar('refetchEvents');
-       alert('Event Update');
-      }
-     })
-    },
-
-    eventDrop:function(event)
-    {
-     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-     var title = event.title;
-     var id = event.id;
-     $.ajax({
-      url:"update.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id},
-      success:function()
-      {
-       calendar.fullCalendar('refetchEvents');
-       alert("Event Updated");
-      }
-     });
-    },
-
-    eventClick:function(event)
-    {
-     if(confirm("Are you sure you want to remove it?"))
-     {
-      var id = event.id;
-      $.ajax({
-       url:"delete.php",
-       type:"POST",
-       data:{id:id},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Event Removed");
-       }
-      })
-     }
-    },
-
-   });
-  });
-   
-  </script>
-
-    
-
     
 
 <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
@@ -142,16 +44,16 @@
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <label for="firstName" class="form-label">Prénom</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Omnes" value="" required>
               <div class="invalid-feedback">
-                Un Nom valide est requis.
+                Un prénom valide est requis.
               </div>
             </div>
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Nom de famille</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="lastName" placeholder="Santé" value="" required>
               <div class="invalid-feedback">
                 Un Nom de famille valide est requis..
               </div>
@@ -225,23 +127,9 @@
                 
               </select>
               <div class="invalid-feedback">
-                Donné votre spécialité.
+                Donnez votre spécialité.
               </div>
             </div>
-
-
-            <div class="col-md-5">
-              <label for="pays" class="form-label">Disponibilité</label>
-              <select class="form-select" id="pays" required>
-                <option value="">Choisir...</option>
-                <option>Calendrier</option>
-              </select>
-              <div class="invalid-feedback">
-                rentrer une date disponible.
-              </div>
-            </div>
-
-            <div id="calendar"></div>
             
 
           <hr class="my-4">
