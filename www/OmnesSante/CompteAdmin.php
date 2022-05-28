@@ -264,9 +264,27 @@
 
           <p><br>Veuillez trouvez ci-joint vos accréditations.</p>
           <br>
-          <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-          <p><a class="btn btn-secondary" href="afficherMedecins.php">Voir les médecins &raquo;</a></p>
-          <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
+
+
+          <form method="post" action="choixAdmin.php">
+
+          
+        <br>
+        <br>
+
+        <button id="editbtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="labo">Modifier les informations du laboratoire</button>
+        <br>
+        <br>
+        <button id="editbtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="medecin">Modifier et supprimer les médecins</button>
+         <br>
+        <br>
+        <button id="editbtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="dispo">Modifier les disponibilités des médecins</button>
+         <br>
+        <br>
+        <button id="editbtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="ajouter">Ajouter un médecin</button>
+         <br>
+        <br>
+          <form>
           
 
         </div><!-- /.col-lg-4 -->
