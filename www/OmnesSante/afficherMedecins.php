@@ -22,6 +22,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
     <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
+
+    <script>
+      function getMedecinID()
+      {
+      var select = document.getElementById('doctor');
+      var value = select.options[select.selectedIndex].value;
+      document.getElementById("hiddenInput").value=value;
+      window.alert(value);
+      }
+    </script>
     <!-- css pour le bootstrap -->
     <style>
       .bd-placeholder-img {
@@ -220,7 +230,7 @@
     {
       while ($row=mysqli_fetch_assoc($result)) {
 
-        echo "<option>".$row["nom"]." ".$row["prenom"]." ".$row["utilisateurID"]."</option>";
+        echo "<option value=".$row["utilisateurID"].">".$row["nom"]." ".$row["prenom"]."</option>";
       }
     }
     ?>
@@ -232,12 +242,14 @@
     <br>
     <br>
 
-    <button id="editbtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="modifier">Modifier le médecin</button>
+    <button id="editbtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="modifier" onclick="getMedecinID()">Modifier le médecin</button>
 
     <br>
     <br>
 
-    <button id="deletebtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="supprimer">Supprimer le médecin</button>
+    <button id="deletebtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="supprimer" onclick="getMedecinID()">Supprimer le médecin</button>
+ 
+    <input id="hiddenInput" name="medID" type="hidden" value="13">
 
   </form>
 
