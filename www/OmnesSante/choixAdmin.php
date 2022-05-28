@@ -3,6 +3,7 @@
 if($_POST['action'] == 'labo')
 {
 	echo "Modifier les informations du laboratoire";
+	header("Location: modification_labo.php");
 }elseif ($_POST['action']=='medecin') {
 	echo "Modifier et supprimer les médecins";
 	header("Location: afficherMedecins.php");

@@ -63,10 +63,10 @@ if($_REQUEST['util_type']=="Client"){
   $_REQUEST['util_type']=1;
 }
 if($_REQUEST['util_type']=="Administrateur"){
-  $_REQUEST['util_type']=2;
+  $_REQUEST['util_type']=3;
 }
 if($_REQUEST['util_type']=="Professionnel de santé"){
-  $_REQUEST['util_type']=3;
+  $_REQUEST['util_type']=2;
 }
 
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
