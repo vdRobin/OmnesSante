@@ -156,46 +156,13 @@
             <div class="carousel-caption text-end">
               <h1 style="color: rgb(0,0,0)">Nous sommes à votre écoute</h1>
               <p style="color: rgb(0,0,0)">Nos practiciens sont mobilisés au quotidien pour votre santé !</p>
-
-
-
-
-
-              <form class="d-flex" role="search">
+              <form class="d-flex" role="search" action="resultatRecherche.php" method="get" target="_self">
                 <input class="form-control me-2 offset-lg-5" type="search" name="query" id="query" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
                     <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                   </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
               </form>
-
-              <?php
-              $min_length = 3;
-              //  process de la recherche
-              if (isset($_GET["query"])) {
-                $query = $_GET["query"];
-                
-                if (strlen($query) >= $min_length) {
-                  // // // // // // //  alerte pour vérifier si on rentre dans le if
-                  // // // // // // // echo '<script type ="text/JavaScript">';
-                  // // // // // // // echo 'alert(" recherche lancée ")';
-                  // // // // // // // echo '</script>';
-
-
-                  require "recherche.php";
-
- 
-                }
-              }
-              ?>
-
-
-
-
-
-
-
-
             </div>
           </div>
         </div>
@@ -209,16 +176,14 @@
               <p style="color: rgb(0,0,0)">Nous proposons maintenant des consultations en ligne <br> pour vous obtenir
                 un rendez vous plus rapidement</p>
 
-              <form class="d-flex" role="search">
+              <form class="d-flex" role="search" action="resultatRecherche.php" method="get" target="_self">
                 <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
                     <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                   </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
-                <input class="form-control me-2" type="search" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
-
+                <input class="form-control me-2" type="search" name="query" id="query" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
               </form>
             </div>
-
           </div>
         </div>
 
@@ -231,16 +196,14 @@
               <p>En juillet 2022, vous pourrez enfin commander vos médicaments grâce à <br>notre pharmacie en ligne,
                 durée de livraison : 1h30</p>
 
-              <form class="d-flex" role="search">
-
-                <input class="form-control me-2 offset-lg-5" type="search" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
-
+                <form class="d-flex" role="search" action="resultatRecherche.php" method="get" target="_self">
+                <input class="form-control me-2 offset-lg-5" type="search" name="query" id="query" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
                     <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                   </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
               </form>
-
+            
             </div>
           </div>
         </div>
