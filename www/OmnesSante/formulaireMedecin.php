@@ -6,8 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Scotto celia, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Omnes Santé</title>
-  <link rel="icon" sizes="16x16" href="image/logo.jpg">
+    <title>Index</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
@@ -161,13 +160,13 @@ echo "<br />Image Failed to upload.<br />";
           // Exécute la requête sur la base de données
             $res = mysqli_query($conn, $query1);
             $res = mysqli_query($conn, $query2);
-            echo $query1;
-            echo $query2;
+            echo $query1 ;
+            echo $query2 ;
             //echo "Name :".$name.'<br>';
             //echo "image:".$image.'<br>';
             //echo "Requete SQL:"$sqlInsertimageintodb;
             //echo $msg;
-
+            
             if($res){
                echo "<div class='sucess'>
                      <h3>Vous êtes inscrit avec succès.</h3>
@@ -244,88 +243,36 @@ echo "<br />Image Failed to upload.<br />";
             </div>
 
             <div class="col-md-4">
-              <label for="utilisateur" class="form-label">Type d'Utilisateur</label>
-              <select class="form-select" id="state" name="util_type" required>
+              <label for="spé" class="form-label">Spécialité</label>
+              <select class="form-select" id="specialite" name="specialite" required>
                 <option value="">Choisir...</option>
-                <option>Client</option>
-                <option>Administrateur</option>
+                <option>Addictologie</option>
+                <option>Andrologie</option>
+                <option>Cardiologie</option>
+                <option>Dermatologie</option>
+                <option>Gastro-epatho-enterologie</option>
+                <option>Gynecologie</option>
+                <option>I.S.T</option>
+                <option>Osthéopathie</option>
+                
               </select>
               <div class="invalid-feedback">
-                Donner votre statut.
+                Donné votre spécialité.
               </div>
             </div>
             
 
           <hr class="my-4">
 
+          <h4 class="mb-3">Déposez votre CV</h4>
+
+          <div class="form-check">
+            <input type="file" id="same-address" name="cv">
+          </div>
+
+        
+
           <hr class="my-4">
-
-          <h4 class="mb-3">Carte Vitale</h4>
-
-          
-          <div class="col-md-6">
-              <label for="cv-number" class="form-label">Chiffre de la carte Vitale</label>
-              <input type="text" class="form-control" id="cv-number" name="nb_vitale" placeholder="" required>
-              <div class="invalid-feedback">
-                Les chiffres de la carte vitales sont requis.
-              </div>
-            </div>
-
-          <h4 class="mb-3">Paiement</h4>
-
-          <div class="my-3">
-            <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-              <label class="form-check-label" for="credit">VISA</label>
-            </div>
-            <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="debit">MasterCard</label>
-            </div>
-            <div class="form-check">
-              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="paypal">American Express</label>
-            </div>
-            <div class="form-check">
-              <input id="paypale" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="paypal">PayPal</label>
-            </div>
-          </div>
-
-          <div class="row gy-3">
-            <div class="col-md-6">
-              <label for="cc-name" class="form-label">Nom sur la carte</label>
-              <input type="text" class="form-control" id="cc-name" name="nom_carte_credit" placeholder="" required>
-              <small class="text-muted">Le nom complet écrit sur le carte est requis</small>
-              <div class="invalid-feedback">
-                Le nom complet écrit sur la carte est requis.
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <label for="cc-number" class="form-label">Chiffres de la carte</label>
-              <input type="text" class="form-control" id="cc-number" name="num_carte_credit" placeholder="" required>
-              <div class="invalid-feedback">
-                Le numéro de carte vitale est requis.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" name="exp_carte_credit" placeholder="" required>
-              <div class="invalid-feedback">
-                La date d'expiration de la carte est requise.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" name="cvv_carte_credit" placeholder="" required>
-              <div class="invalid-feedback">
-                Le code de sécurité est requis.
-              </div>
-            </div>
-          </div>
 
           <hr class="my-4">
 
