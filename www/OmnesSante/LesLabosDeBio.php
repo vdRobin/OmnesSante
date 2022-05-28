@@ -128,7 +128,11 @@
     <div class="row py-lg-Celia">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Nos services</h1>
-        <p class="lead text-muted">Vous trouverez ci-dessous tout nos services mis a disposition pour vous, dans notre laboratoire.</p>
+        <p class="lead text-muted">Vous trouverez ci-dessous tout nos services mis a disposition pour vous, dans notre laboratoire.
+          <br> Laboratoire Omnes Santé
+          <br> Situé au 37 quai de Grenelle 7015, Paris
+          <br> Telephone: +33 01 22 33 44 55
+          <br> Email: labo.biologie@omnessante.fr</p>
         <p>
           <a href="#" class="btn btn-primary my-2">Prendre rendez-vous</a>
           </p>
