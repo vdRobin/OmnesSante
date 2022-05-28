@@ -117,6 +117,7 @@
 
     
     <button id="submitBtn" class="w-100 btn btn-lg btn-primary disabled" type="submit">Se connecter</button>
+    <p>Pas de compte ? <a href="formulaireregister.php" id="no_account">Inscrivez-vous !</a></p>
     <p class="mt-5 mb-3 text-muted">&copy; Omnes Santé | 2022</p>
   </form>
 </main>
