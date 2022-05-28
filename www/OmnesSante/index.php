@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 
@@ -114,8 +114,6 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
-
-    
   </style>
 
 
@@ -135,7 +133,7 @@
   <script src="google-api url"></script><!--  -->
 
   <header>
-  <?php include "navBarre.php";?>
+    <?php include "navBarre.php"; ?>
   </header>
 
   <!-- FIN NAVBAR
@@ -145,8 +143,7 @@
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
@@ -159,16 +156,46 @@
             <div class="carousel-caption text-end">
               <h1 style="color: rgb(0,0,0)">Nous sommes à votre écoute</h1>
               <p style="color: rgb(0,0,0)">Nos practiciens sont mobilisés au quotidien pour votre santé !</p>
+
+
+
+
+
               <form class="d-flex" role="search">
-                <input class="form-control me-2 offset-lg-5" type="search"
-                  placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                    height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
+                <input class="form-control me-2 offset-lg-5" type="search" name="query" id="query" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-                    <path
-                      d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                   </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
               </form>
+
+              <?php
+              $min_length = 3;
+              //  process de la recherche
+              if (isset($_GET["query"])) {
+                $query = $_GET["query"];
+                
+                if (strlen($query) >= $min_length) {
+                  // // // // // // //  alerte pour vérifier si on rentre dans le if
+                  // // // // // // // echo '<script type ="text/JavaScript">';
+                  // // // // // // // echo 'alert(" recherche lancée ")';
+                  // // // // // // // echo '</script>';
+
+
+                  require "recherche.php";
+
+ 
+                }
+              }
+              ?>
+
+
+
+
+
+
+
+
             </div>
           </div>
         </div>
@@ -183,14 +210,11 @@
                 un rendez vous plus rapidement</p>
 
               <form class="d-flex" role="search">
-                <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                    height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
+                <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-                    <path
-                      d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                   </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
-                <input class="form-control me-2" type="search"
-                  placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
 
               </form>
             </div>
@@ -208,15 +232,15 @@
                 durée de livraison : 1h30</p>
 
               <form class="d-flex" role="search">
-                <input class="form-control me-2 offset-lg-5" type="search"
-                  placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                    height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
+
+                <input class="form-control me-2 offset-lg-5" type="search" placeholder="Recherchez la réponse à toutes vos questions" aria-label="Search">
+
+                <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(143, 198, 248)" class="bi bi-search-heart" viewBox="0 0 16 16">
                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-                    <path
-                      d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                   </svg></button> <!-- le logo "recherche" en forme de coeur pour faire la recherche  -->
               </form>
+
             </div>
           </div>
         </div>
@@ -249,13 +273,11 @@
           <!-- Button to launch a modal -->
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir CV</button>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <!--zone d'ombre autour de la fenetre-->
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_pascal_kangoo.png" alt="Click on button"
-                    height="700" width="600" /></div>
+                <div class="modal-body"><img id="image" src="image/cv_pascal_kangoo.png" alt="Click on button" height="700" width="600" /></div>
                 <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
               </div>
             </div>
@@ -272,12 +294,10 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
             CV</button>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button"
-                    height="700" width="600" /></div>
+                <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button" height="700" width="600" /></div>
                 <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
               </div>
             </div>
@@ -289,21 +309,19 @@
 
           <h2 class="fw-normal">DR.Emma BOUL</h2>
           <p>Ce jeune médecin vient de s'installer dans la région ! Soutenez le via sa cagnotte leechee :)</p>
-<!-- Button to launch a modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
-  CV</button>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button"
-          height="700" width="600" /></div>
-      <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
-    </div>
-  </div>
-</div>
-</div><!-- /.col-lg-4 -->
+          <!-- Button to launch a modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
+            CV</button>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button" height="700" width="600" /></div>
+                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 
@@ -325,7 +343,7 @@
       <hr class="featurette-divider">
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">Omnes Santé est le nouveau leader mondial de la santé.  </h2>
+          <h2 class="featurette-heading fw-normal lh-1">Omnes Santé est le nouveau leader mondial de la santé. </h2>
           <p class="lead">Nos spécialitées sont très variées : Andrologie, Gynécologie, Dermatologie, Addictologie...
             Nos spécialistes sont formés pour vous accompagner au mieux dans votre cursus. Laissez vous le temps de vous balader sur ce site internet pour en apprendre d'avantage sur notre compagnie.</p>
         </div>
@@ -347,7 +365,7 @@
         </div>
       </div>
 
-      
+
 
       <hr class="featurette-divider">
 
@@ -363,15 +381,9 @@
   </main>
 
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 

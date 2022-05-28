@@ -6,7 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="Scotto celia, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Index</title>
+    <title>Omnes Santé</title>
+  <link rel="icon" sizes="16x16" href="image/logo.jpg">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />

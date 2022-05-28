@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
-    <title>Page de connexion</title>
+    <title>Omnes Santé</title>
+    <link rel="icon" sizes="16x16" href="www/OmnesSante/image/logo.jpg">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
 
@@ -93,7 +92,7 @@
     
 <main class="form-signin w-100 m-auto">
   <form method="post" action="check_log.php">
-    <a href="../index.html"><img class="img-fluid" src="omnes_sante.png" alt="" width="400" height="400"></a>
+    <a href="../index.php"><img class="img-fluid" src="omnes_sante.png" alt="" width="400" height="400"></a>
     <p style="color: white;font-size:200%;">Connexion</p>
 
     <div class="form-floating">
