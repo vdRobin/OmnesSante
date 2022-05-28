@@ -58,16 +58,6 @@
         require('config.php');
         if (isset($_REQUEST['prenom'])){
 
-if($_REQUEST['util_type']=="Client"){
-  $_REQUEST['util_type']=1;
-}
-if($_REQUEST['util_type']=="Administrateur"){
-  $_REQUEST['util_type']=2;
-}
-if($_REQUEST['util_type']=="Professionnel de santé"){
-  $_REQUEST['util_type']=3;
-}
-
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           $prenom = stripslashes($_REQUEST['prenom']);
           $prenom = mysqli_real_escape_string($conn, $prenom);
@@ -93,36 +83,14 @@ if($_REQUEST['util_type']=="Professionnel de santé"){
           $pays = stripslashes($_REQUEST['pays']);
           $pays = mysqli_real_escape_string($conn, $pays);
             // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $type_util = stripslashes($_REQUEST['util_type']);
-          $type_util = mysqli_real_escape_string($conn, $type_util);
-            // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           $specialite = stripslashes($_REQUEST['specialite']);
           $specialite = mysqli_real_escape_string($conn, $specialite);
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           //$upload_cv = stripslashes($_REQUEST['cv']);
           //$upload_cv = mysqli_real_escape_string($conn, $upload_cv);
-            // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $nb_vitale = stripslashes($_REQUEST['nb_vitale']);
-          $nb_vitale = mysqli_real_escape_string($conn, $nb_vitale);
-            // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $nom_carte_credit = stripslashes($_REQUEST['nom_carte_credit']);
-          $nom_carte_credit = mysqli_real_escape_string($conn, $nom_carte_credit);
-            // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $num_carte_credit = stripslashes($_REQUEST['num_carte_credit']);
-          $num_carte_credit = mysqli_real_escape_string($conn, $num_carte_credit);
-            // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $exp_carte_credit = stripslashes($_REQUEST['exp_carte_credit']);
-          $exp_carte_credit = mysqli_real_escape_string($conn, $exp_carte_credit);
-            // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $cvv_carte_credit = stripslashes($_REQUEST['cvv_carte_credit']);
-          $cvv_carte_credit = mysqli_real_escape_string($conn, $cvv_carte_credit);
-            // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $type_carte_credit = stripslashes($_REQUEST['paymentMethod']);
-          $type_catre_credit = mysqli_real_escape_string($conn, $type_carte_credit);
           //requéte SQL + mot de passe crypté
-            $query1= "INSERT INTO `cartebancaire`(`numCarte`, `type`, `proprietaire`, `dateExp`, `CVV`) VALUES ('$num_carte_credit','$type_carte_credit','$nom_carte_credit','$exp_carte_credit','$cvv_carte_credit')";
-            $query2 = "INSERT INTO `utilisateur`(`numCarte`, `typeUtilisateur`, `nom`, `prenom`, `specialite`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `carteVitale`, `motDePasse`) 
-            VALUES ('$num_carte_credit','$type_util','$nom_famille','$prenom','$specialite', '$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
+            $query2 = "INSERT INTO `utilisateur`(`numCarte`, `nom`, `prenom`, `specialite`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `motDePasse`) 
+            VALUES ('4990963272538565','$nom_famille','$prenom','$specialite', '$ville','$code_postal','$pays','$telephone','$email','".hash('sha256', $password)."')";
 
 
 
@@ -158,9 +126,8 @@ echo "<br />Image uploaded successfully.";
 echo "<br />Image Failed to upload.<br />";
 }*/
           // Exécute la requête sur la base de données
-            $res = mysqli_query($conn, $query1);
+            
             $res = mysqli_query($conn, $query2);
-            echo $query1 ;
             echo $query2 ;
             //echo "Name :".$name.'<br>';
             //echo "image:".$image.'<br>';
@@ -168,15 +135,12 @@ echo "<br />Image Failed to upload.<br />";
             //echo $msg;
             
             if($res){
-               echo "<div class='sucess'>
-                     <h3>Vous êtes inscrit avec succès.</h3>
-                     <p>Cliquez ici pour vous <a href='index.php'>connecter</a></p>
-               </div>";
+              header("Location: login/confirmation.php");
             }
         }else{
         ?>
 
-<form action="formulaireregister.php" method="post" enctype="multipart/form-data">
+<form action="formulaireMedecin.php" method="post" enctype="multipart/form-data">
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Prénom</label>
@@ -276,7 +240,7 @@ echo "<br />Image Failed to upload.<br />";
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">S'inscrire sur OMNES</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Ajouter un médecin</button>
         </form>
         <?php } ?>
       </div>
