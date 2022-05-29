@@ -33,12 +33,20 @@
           center: 'title',
           right: ''
         },
-        events: 'load.php',
+        events: {
+        url: 'load.php',
+          data: function() { // a function that returns an object
+            return {
+              medecinID: getMedecinID(),
+            };
+          }
+        },
         selectable: true,
         selectHelper: true,
 
         select: function(start, end, allDay) {
-          var title = prompt("Enter Event Title");
+          var title = getTitle();
+          console.log(title);
           if (title) {
             var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
             var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
@@ -119,6 +127,22 @@
 
       });
     });
+
+      function loadMedecinEvents() {
+        $('#calendar').fullCalendar('refetchEvents')
+      }
+
+      function getMedecinID()
+      {
+        var select = document.getElementById('doctor');
+        var value = select.options[select.selectedIndex].value;
+        document.getElementById("hiddenInput").value=value;
+        return value;
+      }
+
+      function getTitle(){
+        return '<?= $_SESSION['nom']." ".$_SESSION['prenom'];?>';
+      }
   </script>
 
 
@@ -287,18 +311,37 @@
           <title>Placeholder</title>
           <rect width="100%" height="100%" fill="#eee" />
           <div id="calendar"></div>
+
+          <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">Formulaire</h4>
+            <select class="form-select" id="doctor" name="select_medecin"  onchange="loadMedecinEvents()"
+            required>
+            <option value="">Choisir...</option>
+
+            <?php
+              require('config.php');
+
+              $q = "SELECT * FROM `utilisateur` WHERE typeUtilisateur=2";
+              $result = mysqli_query($conn, $q) or die();
+              $rows = mysqli_num_rows($result);
+              if ($result->num_rows > 0) 
+              {
+                while ($row=mysqli_fetch_assoc($result)) {
+
+                  echo "<option value=".$row["utilisateurID"].">".$row["nom"]." ".$row["prenom"]."</option>";
+                }
+              }
+            ?>
+
+          </select>
+          <div class="invalid-feedback">
+            Selectionnez votre médecin.
+          </div>
+
+          <input id="hiddenInput" name="IDvalue" type="hidden" value="13">
+
           </svg>
-
-
-
         </div>
-
-        <hr class="featurette-divider">
-
-
-
-
-        <hr class="featurette-divider">
 
         <!-- /END THE FEATURETTES -->
 
