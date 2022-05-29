@@ -6,7 +6,14 @@ $connect = new PDO('mysql:host=localhost;dbname=bddsante', 'root', '');
 
 $data = array();
 
-$query = "SELECT * FROM events ORDER BY id";
+if(isset($_POST['IDvalue']))
+{
+  $ID=$_POST['IDvalue'];
+    echo '<script languag="javascript">alert("On charge les dispos du médecin");</script>';
+}
+
+
+$query = "SELECT * FROM events WHERE medecinID=$ID ORDER BY id";
 
 $statement = $connect->prepare($query);
 

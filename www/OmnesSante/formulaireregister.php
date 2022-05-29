@@ -348,7 +348,7 @@ echo "<br />Image Failed to upload.<br />";
 
             <div class="col-md-3">
               <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" name="exp_carte_credit" placeholder="" required>
+              <input type="text" class="form-control" id="cc-expiration" name="exp_carte_credit" placeholder="MM/AAAA" required>
               <div class="invalid-feedback">
                 La date d'expiration de la carte est requise.
               </div>
