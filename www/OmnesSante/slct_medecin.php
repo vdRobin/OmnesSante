@@ -130,7 +130,17 @@
        center:'title',
        right:''
    },
-   events: 'load.php',
+
+   events: {
+          url: 'load.php',
+          data: function() { // a function that returns an object
+            return {
+              medecinID: getMedecinID(),
+            };
+
+          }
+        },
+
    selectable:true,
    selectHelper:true,
 
@@ -213,15 +223,20 @@ eventClick:function(event)
 });
      });
 
-      function getMedecinID()
+     function loadMedecinEvents() {
+      $('#calendar').fullCalendar('refetchEvents')
+    }
+
+    function getMedecinID()
       {
-      var select = document.getElementById('doctor');
+        var select = document.getElementById('doctor');
       var value = select.options[select.selectedIndex].value;
       document.getElementById("hiddenInput").value=value;
-      window.alert(value);
       return value;
+      
+      
       }
-   
+  
  </script>
 
 
@@ -259,7 +274,8 @@ eventClick:function(event)
 
         </form>
 
- <select class="form-select" id="doctor" name="select_medecin" required>
+ <select class="form-select" id="doctor" name="select_medecin"  onchange="loadMedecinEvents()"
+  required>
       <option value="">Choisir...</option>
 
     <?php

@@ -1,24 +1,20 @@
 <?php
-
-//load.php
-
 $connect = new PDO('mysql:host=localhost;dbname=bddsante', 'root', '');
 
 $data = array();
 
-if(isset($_POST['IDvalue']))
+if(!isset($_GET['medecinID'])||$_GET['medecinID']=="")
 {
-  $ID=$_POST['IDvalue'];
-    echo '<script languag="javascript">alert("On charge les dispos du médecin");</script>';
+    $medecinID = 6666666;
+}
+else {
+  $medecinID=$_GET['medecinID'];
 }
 
-
-$query = "SELECT * FROM events ORDER BY id";
+$query = "SELECT * FROM events WHERE medecinID=".$medecinID." ORDER BY id";
 
 $statement = $connect->prepare($query);
-
 $statement->execute();
-
 $result = $statement->fetchAll();
 
 foreach($result as $row)
@@ -32,5 +28,4 @@ foreach($result as $row)
 }
 
 echo json_encode($data);
-
 ?>
