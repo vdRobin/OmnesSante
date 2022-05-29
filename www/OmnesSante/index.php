@@ -6,18 +6,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.98.0">
   <title>Omnes Santé</title>
   <link rel="icon" sizes="16x16" href="image/logo.jpg">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
-
-
-
-
-
   <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
+
   <!-- css pour le bootstrap -->
   <style>
     .bd-placeholder-img {
@@ -47,6 +42,7 @@
       width: 1.5rem;
       height: 100vh;
     }
+
 
     .bi {
       vertical-align: -.125em;
@@ -115,23 +111,10 @@
       display: block;
     }
   </style>
-
-
-
-  <!-- Custom styles for this template -->
-  <!-- <link rel="stylesheet" href=
-  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity=
-  "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"> -->
   <link href="carousel.css" rel="stylesheet">
-
-
 </head>
 
 <body>
-  <script src="google-api url"></script><!--  -->
-
   <header>
     <?php include "navBarre.php"; ?>
   </header>
@@ -339,7 +322,7 @@
     <!-- FOOTER -->
     <footer class="container">
       <p class="float-end"><a href="#">Back to top</a></p>
-      <p>&copy; 2022 OMNES-Santé. &middot; <a href="index-2.html">Nous contacter</a> &middot; <a href="#">Terms</a></p>
+      <p>&copy; 2022 OMNES-Santé. &middot; <a href="index-2.html">Nous contacter</a></p>
     </footer>
   </main>
 

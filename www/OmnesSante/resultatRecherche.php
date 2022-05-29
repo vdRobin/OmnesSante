@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
     <title>Recherche</title>
 
@@ -130,12 +129,14 @@
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light">Section recherche</h1>
                     <p>
-                        <a href="index.php" class="btn btn-primary my-2">Accueil</a>
+                        <a href="index.php" class="btn btn-primary my-2"style="background-color: rgb(143, 198, 248);border-color: rgb(255,255,255)">Accueil</a>
                     </p>
                 </div>
+                
             </div>
         </section>
 
+        
         <div class="container marketing">
 
         <?php
@@ -148,7 +149,7 @@
      
                   require "recherche.php";
 
-                }
+                }else{echo "Aucun résultat...".'<br>'."Veuillez affiner votre recherche, au moins 3 caractères sont requis pour pouvoir vous attribuer un résultat";}
               }
               ?>
 
