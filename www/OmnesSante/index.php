@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.98.0">
   <title>Omnes Santé</title>
-  <link rel="icon" sizes="16x16" href="image/logo1.jpg">
+  <link rel="icon" sizes="16x16" href="image/logo.jpg">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
   <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">

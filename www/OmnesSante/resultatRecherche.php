@@ -134,66 +134,6 @@
                     </p>
                     
                 </div>
-                
-
-                <div class="row">
-        <div class="col-lg-4">
-          <img src="image/kangoo.png" alt="maboul" height="150" width="150">
-          <h2 class="fw-normal">DR.Pascal KANGOO</h2>
-          <p>Elue Médecin Généraliste du mois d'avril 2022 dans votre région!</p>
-          <!-- Button to launch a modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir CV</button>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <!--zone d'ombre autour de la fenetre-->
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_pascal_kangoo.png" alt="Click on button" height="700" width="600" /></div>
-                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
-              </div>
-            </div>
-          </div>
-        </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4">
-
-          <img src="image/megane.png" alt="maboul" height="150" width="150">
-
-          <h2 class="fw-normal">DR.Mégane COUPEE</h2>
-          <p>Disponible 24h/24 le Weekend pour une consultation en visioconférence</p>
-          <!-- Button to launch a modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
-            CV</button>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button" height="700" width="600" /></div>
-                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
-              </div>
-            </div>
-          </div>
-        </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4">
-          <img src="image/maboul.png" alt="maboul" height="150" width="150">
-
-          <h2 class="fw-normal">DR.Emma BOUL</h2>
-          <p>Ce jeune médecin vient de s'installer dans la région ! Soutenez le via sa cagnotte leechee :)</p>
-          <!-- Button to launch a modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
-            CV</button>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_emma_boul.png" alt="Click on button" height="700" width="600" /></div>
-                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
-              </div>
-            </div>
-          </div>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
             </div>
         </section>
 
