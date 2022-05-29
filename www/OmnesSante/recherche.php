@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                     <p>
                         <?php
-                        echo '<img src="image/docteur1.png" alt="icon" height="60" width="60"/>';
+                          echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['photo'] ).'" style="float: right;" width="130" height="130"/>';
                         // echo "<img src=' .  $row['photo']  . ".jpg'/>";
                         if ($row['typeUtilisateur'] == 2) {
                             echo "  Médecin - ". $row['specialite'] . '<br>';

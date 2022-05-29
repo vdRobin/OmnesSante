@@ -263,7 +263,7 @@
             Spécialité : <?php echo $_SESSION['specialite']; ?>
             <br>
             Ville : <?php echo $_SESSION['ville']; ?>
-            <br><br>
+            <br>
           </p>
           <p><br>Veuillez trouvez ci-joint vos informations ainsi que votre emplois du temps.</p>
           <br>
