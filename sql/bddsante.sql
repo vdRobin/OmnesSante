@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 29 mai 2022 à 17:57
+-- Généré le : dim. 29 mai 2022 à 21:13
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -65,23 +65,6 @@ INSERT INTO `cartebancaire` (`numCarte`, `type`, `proprietaire`, `dateExp`, `CVV
 -- --------------------------------------------------------
 
 --
--- Structure de la table `consultation`
---
-
-DROP TABLE IF EXISTS `consultation`;
-CREATE TABLE IF NOT EXISTS `consultation` (
-  `consultationID` int(11) NOT NULL AUTO_INCREMENT,
-  `clientID` int(11) NOT NULL,
-  `medecinID` int(11) NOT NULL,
-  `heure` timestamp NOT NULL,
-  PRIMARY KEY (`consultationID`),
-  KEY `utilisateur` (`clientID`),
-  KEY `medecin` (`medecinID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `events`
 --
 
@@ -94,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `medecinID` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `medecin3` (`medecinID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `events`
@@ -103,10 +86,23 @@ CREATE TABLE IF NOT EXISTS `events` (
 INSERT INTO `events` (`id`, `title`, `end_event`, `start_event`, `medecinID`) VALUES
 (2, 'test', '2022-05-24 10:00:00', '2022-05-24 06:00:00', 1),
 (3, 'test2', '2022-05-25 09:00:00', '2022-05-25 06:30:00', 2),
-(4, 'post', '2022-05-25 10:30:00', '2022-05-25 06:00:00', 6),
 (5, 'test', '2022-06-01 22:00:00', '2022-06-01 18:00:00', 6),
 (6, 'getid', '2022-05-31 22:00:00', '2022-05-31 18:00:00', 7),
-(7, 'baltha', '2022-05-31 22:30:00', '2022-05-31 17:30:00', 5);
+(7, 'baltha', '2022-05-31 22:30:00', '2022-05-31 17:30:00', 5),
+(8, 'OCCUPEE', '2022-05-25 10:30:00', '2022-05-25 06:30:00', 5),
+(9, 'OCCUPEE', '2022-05-23 21:30:00', '2022-05-23 00:00:00', 5),
+(10, 'OCCUPEE', '2022-05-25 20:00:00', '2022-05-25 15:30:00', 5),
+(11, 'OCCUPEE', '2022-05-25 23:30:00', '2022-05-25 20:00:00', 5),
+(16, 'RENDEZ-VOUS', '2022-05-26 16:00:00', '2022-05-26 13:30:00', 6),
+(18, 'Segado JP', '2022-05-24 14:30:00', '2022-05-23 13:30:00', 6),
+(19, 'Segado JP', '2022-05-25 12:00:00', '2022-05-25 09:00:00', 6),
+(23, 'Segado JP', '2022-05-26 10:30:00', '2022-05-26 07:30:00', 6),
+(24, 'Segado JP', '2022-05-26 11:30:00', '2022-05-26 08:30:00', 6),
+(25, 'Segado JP', '2022-05-24 10:30:00', '2022-05-24 06:30:00', 4),
+(26, 'Segado JP', '2022-05-25 10:00:00', '2022-05-25 07:00:00', 4),
+(27, 'Segado JP', '2022-05-27 10:30:00', '2022-05-27 07:30:00', 4),
+(28, 'Segado JP', '2022-05-23 09:30:00', '2022-05-23 06:30:00', 10),
+(29, 'Segado JP', '2022-05-24 10:30:00', '2022-05-24 10:00:00', 10);
 
 -- --------------------------------------------------------
 
@@ -129,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `laboratoire` (
 --
 
 INSERT INTO `laboratoire` (`nom`, `email`, `telephone`, `adresse`, `id`) VALUES
-('OMNES SANTE', 'omnes@example.com', '0122334455', '37 quai de Grenelle 75015', 1);
+('OMNES SANTE', 'omnes@example.com', '0122334456', '37 quai de Grenelle 75015', 1);
 
 -- --------------------------------------------------------
 
@@ -215,13 +211,6 @@ INSERT INTO `utilisateur` (`utilisateurID`, `numCarte`, `typeUtilisateur`, `nom`
 --
 -- Contraintes pour les tables déchargées
 --
-
---
--- Contraintes pour la table `consultation`
---
-ALTER TABLE `consultation`
-  ADD CONSTRAINT `medecin` FOREIGN KEY (`medecinID`) REFERENCES `utilisateur` (`utilisateurID`),
-  ADD CONSTRAINT `utilisateur` FOREIGN KEY (`clientID`) REFERENCES `utilisateur` (`utilisateurID`);
 
 --
 -- Contraintes pour la table `events`
