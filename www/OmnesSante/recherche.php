@@ -7,41 +7,19 @@ WHERE user.nom LIKE '%$query%' OR user.prenom LIKE '%$query%' OR user.specialite
 $result = mysqli_query($conn, $query1) or die();
 $rows = mysqli_num_rows($result);
 
-// echo "Il y a $rows résultat(s)<br><br>"; //affiche le nombre de résultat, mais comme on n'affiche pas les patient le résultat peut etre faux
-
-if ($rows==0) {
-    echo "Aucun résultat..."; // si il n'a pas de résultats, on l'affiche 
+if ($rows == 0) {
+    echo "Aucun résultat...";
 }
 while ($row = mysqli_fetch_assoc($result)) {
 
     if ($row['typeUtilisateur'] != 1) {
 ?>
-
-        <div class="card bg-primary text-white droite">
-            <figure class="card-body">
-                <blockquote class="blockquote">
-
-                    <p>
-                        <?php
-                          echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['photo'] ).'" style="float: right;" width="130" height="130"/>';
-                        // echo "<img src=' .  $row['photo']  . ".jpg'/>";
-                        if ($row['typeUtilisateur'] == 2) {
-                            echo "  Médecin - ". $row['specialite'] . '<br>';
-                        }
-                        if ($row['typeUtilisateur'] == 3) {
-                            echo "  Administrateur" . '<br>';
-                        }
-                        echo "Nom : " . $row['nom'] . '<br>';
-                        echo "Prenom : " . $row['prenom']. '<br>' ;
-                        echo "Ville : " . $row['ville'] ;
-                        ?>
-                    </p
-                </blockquote>
-            </figure>
-        </div><br><br>
+<?php require "display-1-user.php"?>
 <?php
-
-
     }
 }
 ?>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

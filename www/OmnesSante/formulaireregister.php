@@ -96,9 +96,6 @@ if($_REQUEST['util_type']=="Professionnel de santé"){
             // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           $type_util = stripslashes($_REQUEST['util_type']);
           $type_util = mysqli_real_escape_string($conn, $type_util);
-            // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $specialite = stripslashes($_REQUEST['specialite']);
-          $specialite = mysqli_real_escape_string($conn, $specialite);
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           //$upload_cv = stripslashes($_REQUEST['cv']);
           //$upload_cv = mysqli_real_escape_string($conn, $upload_cv);
@@ -122,8 +119,8 @@ if($_REQUEST['util_type']=="Professionnel de santé"){
           $type_catre_credit = mysqli_real_escape_string($conn, $type_carte_credit);
           //requéte SQL + mot de passe crypté
             $query1= "INSERT INTO `cartebancaire`(`numCarte`, `type`, `proprietaire`, `dateExp`, `CVV`) VALUES ('$num_carte_credit','$type_carte_credit','$nom_carte_credit','$exp_carte_credit','$cvv_carte_credit')";
-            $query2 = "INSERT INTO `utilisateur`(`numCarte`, `typeUtilisateur`, `nom`, `prenom`, `specialite`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `carteVitale`, `motDePasse`) 
-            VALUES ('$num_carte_credit','$type_util','$nom_famille','$prenom','$specialite', '$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
+            $query2 = "INSERT INTO `utilisateur`(`numCarte`, `typeUtilisateur`, `nom`, `prenom`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `carteVitale`, `motDePasse`) 
+            VALUES ('$num_carte_credit','$type_util','$nom_famille','$prenom', '$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
 
 
 
@@ -161,8 +158,6 @@ echo "<br />Image Failed to upload.<br />";
           // Exécute la requête sur la base de données
             $res = mysqli_query($conn, $query1);
             $res = mysqli_query($conn, $query2);
-            echo $query1;
-            echo $query2;
             //echo "Name :".$name.'<br>';
             //echo "image:".$image.'<br>';
             //echo "Requete SQL:"$sqlInsertimageintodb;
