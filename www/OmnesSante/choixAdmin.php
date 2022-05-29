@@ -9,6 +9,7 @@ if($_POST['action'] == 'labo')
 	header("Location: afficherMedecins.php");
 }elseif ($_POST['action']=='dispo') {
 	echo "Modifier les disponibilités des médecins";
+	header("Location: slct_medecin.php");
 }elseif ($_POST['action']=='ajouter') {
 
 	echo "Ajouter un médecin";

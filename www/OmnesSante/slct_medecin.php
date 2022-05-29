@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+  <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,14 +9,14 @@
     <title>Test Calendrier</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
     
-<style>
+    <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -115,24 +115,24 @@
       }
     </style>
 
-     <script>
+    <script>
 
       $(document).ready(function() {
-         var calendar = $('#calendar').fullCalendar({
-            editable:true,
+       var calendar = $('#calendar').fullCalendar({
+        editable:true,
     defaultView:'agendaWeek', // Mode d'affichage par défaut
     height:500, // Hauteur du calendrier
     aspectRatio: 1,
     locale:'fr',
 
     header:{
-       left:'prev,next today',
-       center:'title',
-       right:''
+     left:'prev,next today',
+     center:'title',
+     right:''
    },
 
    events: {
-          url: 'load.php',
+    url: 'load.php',
           data: function() { // a function that returns an object
             return {
               medecinID: getMedecinID(),
@@ -141,190 +141,176 @@
           }
         },
 
-   selectable:true,
-   selectHelper:true,
+        selectable:true,
+        selectHelper:true,
 
-   select: function(start, end, allDay)
-   {
-       var title = prompt("Enter Event Title");
-       if(title)
-       {
+        select: function(start, end, allDay)
+        {
+         var title = prompt("Enter Event Title");
+         if(title)
+         {
           var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
           var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
           var IDvalue = getMedecinID();
           $.ajax({
-             url:"insert.php",
-             type:"POST",
-             data:{title:title, start:start, end:end, IDvalue:IDvalue},
-             success:function()
-             {
-                calendar.fullCalendar('refetchEvents');
-                alert("Added Successfully");
-            }
+           url:"insert.php",
+           type:"POST",
+           data:{title:title, start:start, end:end, IDvalue:IDvalue},
+           success:function()
+           {
+            calendar.fullCalendar('refetchEvents');
+            alert("Added Successfully");
+          }
         })
-      }
-  },
-  editable:true,
-  eventResize:function(event)
-  {
-   var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-   var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-   var title = event.title;
-   var id = event.id;
-   var IDvalue= getMedecinID();
-   $.ajax({
-      url:"update.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id, IDvalue:IDvalue},
-      success:function(){
+        }
+      },
+      editable:true,
+      eventResize:function(event)
+      {
+       var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+       var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+       var title = event.title;
+       var id = event.id;
+       var IDvalue= getMedecinID();
+       $.ajax({
+        url:"update.php",
+        type:"POST",
+        data:{title:title, start:start, end:end, id:id, IDvalue:IDvalue},
+        success:function(){
          calendar.fullCalendar('refetchEvents');
          alert('Event Update');
-     }
- })
-},
+       }
+     })
+     },
 
-eventDrop:function(event)
-{
-   var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-   var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-   var title = event.title;
-   var id = event.id;
-   var IDvalue= getMedecinID();
-   $.ajax({
-      url:"update.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id, IDvalue:IDvalue},
-      success:function()
-      {
+     eventDrop:function(event)
+     {
+       var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+       var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+       var title = event.title;
+       var id = event.id;
+       var IDvalue= getMedecinID();
+       $.ajax({
+        url:"update.php",
+        type:"POST",
+        data:{title:title, start:start, end:end, id:id, IDvalue:IDvalue},
+        success:function()
+        {
          calendar.fullCalendar('refetchEvents');
          alert("Event Updated");
-     }
- });
-},
+       }
+     });
+     },
 
-eventClick:function(event)
-{
-   if(confirm("Are you sure you want to remove it?"))
-   {
-      var id = event.id;
-      $.ajax({
+     eventClick:function(event)
+     {
+       if(confirm("Are you sure you want to remove it?"))
+       {
+        var id = event.id;
+        $.ajax({
          url:"delete.php",
          type:"POST",
          data:{id:id},
          success:function()
          {
-            calendar.fullCalendar('refetchEvents');
-            alert("Event Removed");
+          calendar.fullCalendar('refetchEvents');
+          alert("Event Removed");
         }
-    })
-  }
-},
+      })
+      }
+    },
 
-});
+  });
      });
 
-     function loadMedecinEvents() {
-      $('#calendar').fullCalendar('refetchEvents')
-    }
+      function loadMedecinEvents() {
+        $('#calendar').fullCalendar('refetchEvents')
+      }
 
-    function getMedecinID()
+      function getMedecinID()
       {
         var select = document.getElementById('doctor');
-      var value = select.options[select.selectedIndex].value;
-      document.getElementById("hiddenInput").value=value;
-      return value;
-      
-      
+        var value = select.options[select.selectedIndex].value;
+        document.getElementById("hiddenInput").value=value;
+        return value;
       }
-  
- </script>
+
+    </script>
 
 
-<link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
+    <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
 
-    
+
+
+   <!-- Custom styles for this template -->
+   <link href="form-validation.css" rel="stylesheet">
+ </head>
+ <body class="bg-light">
+
+  <div class="container ">
+    <main>
+      <div class="py-5 text-center ">
+
+        <h2>Disponibilités du médecin</h2>
+        <p class="lead"> Veuillez renseignez toutes les plages horaires indisponible</p>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+
+          </div>
+          <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">Formulaire</h4>
+            <select class="form-select" id="doctor" name="select_medecin"  onchange="loadMedecinEvents()"
+            required>
+            <option value="">Choisir...</option>
+
+            <?php
+              require('config.php');
+
+              $q = "SELECT * FROM `utilisateur` WHERE typeUtilisateur=2";
+              $result = mysqli_query($conn, $q) or die();
+              $rows = mysqli_num_rows($result);
+              if ($result->num_rows > 0) 
+              {
+                while ($row=mysqli_fetch_assoc($result)) {
+
+                  echo "<option value=".$row["utilisateurID"].">".$row["nom"]." ".$row["prenom"]."</option>";
+                }
+              }
+            ?>
+
+          </select>
+          <div class="invalid-feedback">
+            Selectionnez votre médecin.
+          </div>
+
+          <input id="hiddenInput" name="IDvalue" type="hidden" value="13">
+
+        </div>
+      </div>
+    </main>
+    <br>
+    <br>
+
     <div class="container">
      <div id="calendar"></div>
-      </div>
+   </div>
 
-    
-    <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
-  </head>
-  <body class="bg-light">
-    
-<div class="container ">
-  <main>
-    <div class="py-5 text-center ">
-      
-      <h2>Disponibilités du médecin</h2>
-      <p class="lead"> Veuillez renseignez toutes les plages horaires indisponible</p>
-    </div>
-
-    <div class="row g-5">
-      <div class="col-md-5 col-lg-4 order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          
-      </div>
-      <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Formulaire</h4>
-
-<form method="post" action="load.php">
-           
-
-        </form>
-
- <select class="form-select" id="doctor" name="select_medecin"  onchange="loadMedecinEvents()"
-  required>
-      <option value="">Choisir...</option>
-
-    <?php
-    require('config.php');
-
-    $q = "SELECT * FROM `utilisateur` WHERE typeUtilisateur=2";
-    $result = mysqli_query($conn, $q) or die();
-    $rows = mysqli_num_rows($result);
-    if ($result->num_rows > 0) 
-    {
-      while ($row=mysqli_fetch_assoc($result)) {
-
-        echo "<option value=".$row["utilisateurID"].">".$row["nom"]." ".$row["prenom"]."</option>";
-      }
-    }
-    ?>
-
-    </select>
-    <div class="invalid-feedback">
-      Selectionnez votre médecin.
-    </div>
-
-    <br>
-    <br>
-
-    <button id="editbtn" class="w-100 btn btn-lg btn-primary" name="action" value="modifier" onclick="getMedecinID()">Selectionner le médecin</button>
-
-    <br>
-    <br>
- 
-    <input id="hiddenInput" name="IDvalue" type="hidden" value="13">
-      
-      </div>
-    </div>
-  </main>
-
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2022–2023 Omnes Compagny</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
-</div>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2022–2023 Omnes Compagny</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
 
 
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      <script src="form-validation.js"></script>
-  </body>
+  <script src="form-validation.js"></script>
+</body>
 </html>
