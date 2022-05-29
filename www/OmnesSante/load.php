@@ -13,7 +13,7 @@ if(isset($_POST['IDvalue']))
 }
 
 
-$query = "SELECT * FROM events WHERE medecinID=$ID ORDER BY id";
+$query = "SELECT * FROM events ORDER BY id";
 
 $statement = $connect->prepare($query);
 

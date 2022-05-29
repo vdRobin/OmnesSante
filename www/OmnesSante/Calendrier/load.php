@@ -12,8 +12,7 @@ if(isset($_POST['IDvalue']))
     echo '<script languag="javascript">alert("On charge les dispos du médecin");</script>';
 }
 
-
-$query = "SELECT * FROM events WHERE medecinID=$ID ORDER BY id";
+$query = "SELECT * FROM events ORDER BY id";
 
 $statement = $connect->prepare($query);
 
