@@ -13,34 +13,34 @@ $q = "SELECT * FROM `utilisateur` WHERE typeUtilisateur=2";
       }
     }
 
-$nomFichier=$_REQUEST['nom'];
-$nom=$_REQUEST['nom'];
-$prenom=$_REQUEST['prenom'];
-$email=$_REQUEST['email'];
-$tel=$_REQUEST['telephone'];
-$ville=$_REQUEST['ville'];
-$specialite=$_REQUEST['specialite'];
-$photo=$_REQUEST['photo'];
+$nomFichier=$_SESSION['nom'];
+$nom=$_SESSION['nom'];
+$prenom=$_SESSION['prenom'];
+$email=$_SEESION['email'];
+$tel=$_SESSION['telephone'];
+$ville=$_SESSION['ville'];
+$specialite=$_SESSION['specialite'];
+$photo=$_SESSION['photo'];
 
 
 $xml = new XMLWRITER();
 $xml->openUri($nomFichier);
 
-$xml->xmlwriter_start_document('1.0', 'utf-8');
+$xml->startDocument('1.0', 'utf-8');
 
-$xml->xmlwriter_start_element('CV');
-$xml->xmlwriter_start_element('Medecin');
+$xml->startElement('CV');
+$xml->startElement('Medecin');
 
-$xml->xmlwriter_write_element('Nom', $nom);
-$xml->xmlwriter_write_element('Prenom', $prenom);
-$xml->xmlwriter_write_element('Email', $email);
-$xml->xmlwriter_write_element('Telephone', $tel);
-$xml->xmlwriter_write_element('Ville', $ville);
-$xml->xmlwriter_write_element('Specialité', $specialite);
-$xml->xmlwriter_write_element('Photo', $photo);
+$xml->writeElement('Nom', $nom);
+$xml->writeElement('Prenom', $prenom);
+$xml->writeElement('Email', $email);
+$xml->writeElement('Telephone', $tel);
+$xml->writeElement('Ville', $ville);
+$xml->writeElement('Specialité', $specialite);
+$xml->writeElement('Photo', $photo);
 
-$xml->xmlwriter_end_element();
-$xml->xmlwriter_end_element();
+$xml->endElement();
+$xml->endElement();
 
 header('Location: CompteAdmin.php');
 

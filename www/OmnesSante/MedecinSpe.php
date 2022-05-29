@@ -150,6 +150,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#example3">Voir</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                   </div>
                   <div class="modal fade" id="example3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -182,6 +183,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#example4">Voir</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                   </div>
                   <div class="modal fade" id="example4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -209,6 +211,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#example40">Voir</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                   </div>
                   <div class="modal fade" id="example40" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -237,6 +240,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#example5">Voir</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                   </div>
                   <div class="modal fade" id="example5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -266,6 +270,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#example6">Voir</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                   </div>
                   <div class="modal fade" id="example6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -294,6 +299,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#example7">Voir</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                   </div>
                   <div class="modal fade" id="example7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -322,6 +328,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#example8">Voir</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                   </div>
                   <div class="modal fade" id="example8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -349,6 +356,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#example9">Voir</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                   </div>
                   <div class="modal fade" id="example9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
