@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.98.0">
     <title>Recherche</title>
+    <link rel="icon" sizes="16x16" href="image/logo.jpg">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
 
