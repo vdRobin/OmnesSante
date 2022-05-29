@@ -14,6 +14,9 @@ if($_POST['action'] == 'labo')
 
 	echo "Ajouter un médecin";
 	header("Location: formulaireMedecin.php");
+}elseif ($_POST['action']=='xml') {
+	echo "Créer un fichier XML pour un médecin";
+	header("Location: xml_generation.php");
 }else {
 	echo "Pas de bouton selectionné";
 }
