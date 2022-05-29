@@ -4,6 +4,7 @@
 
 $connect = new PDO('mysql:host=localhost;dbname=bddsante', 'root', '');
 
+
 if(isset($_POST["id"]))
 {
  $query = "
@@ -18,7 +19,7 @@ if(isset($_POST["id"]))
    ':start_event' => $_POST['start'],
    ':end_event' => $_POST['end'],
    ':id'   => $_POST['id'],
-   ':mID' => $_POST['medID'],
+   ':mID' => $_POST['IDvalue']
   )
  );
 }

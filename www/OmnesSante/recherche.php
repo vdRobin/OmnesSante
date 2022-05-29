@@ -1,36 +1,46 @@
-
 <?php
 require "config.php"; //config bdd
-echo $query;
 
-$query1 = "SELECT * FROM `utilsateur`as user 'labratoire' as labo 
-WHERE user.nom LIKE '%$query%' OR user.prenom LIKE '%$query%' OR user.specialite LIKE '%$query%' OR labo.nom LIKE '%$query%'";
+$query1 = "SELECT * FROM `utilisateur`as user
+WHERE user.nom LIKE '%$query%' OR user.prenom LIKE '%$query%' OR user.specialite LIKE '%$query%'";
 
-$res = mysqli_query($conn, $query1);
-echo $query1;
-echo $res;
+$result = mysqli_query($conn, $query1) or die();
+$rows = mysqli_num_rows($result);
 
-// while ($row = mysqli_fetch_assoc($res)) {
-//     echo "ID: " . $row['utilisateurID'] . '<br>';
-//     echo "nom: " . $row['nom'] . '<br>';
-//     echo "prenom: " . $row['prenom'] . '<br>';
-//     echo "specialite: " . $row['specialite'] . '<br><br>';
-// }
+// echo "Il y a $rows résultat(s)<br><br>"; //affiche le nombre de résultat, mais comme on n'affiche pas les patient le résultat peut etre faux
 
-//  affichage résultats
-// if (count($res) > 0) {
-//     foreach ($res as $r) {
-//         echo '<script type ="text/JavaScript">';
-//         echo 'alert(" enter in recherche ")';
-//         echo '</script>';
+if ($rows==0) {
+    echo "Aucun résultat..."; // si il n'a pas de résultats, on l'affiche 
+}
+while ($row = mysqli_fetch_assoc($result)) {
 
-//         printf("<div>%s - %s</div>", $r["user.nom"], $r["user.prenom"], $r["email"]);
-//     }
-// } else {
-//     echo "No results found";
-// }
+    if ($row['typeUtilisateur'] != 1) {
+?>
+
+        <div class="card bg-primary text-white droite">
+            <figure class="card-body">
+                <blockquote class="blockquote">
+
+                    <p>
+                        <?php
+                        echo '<img src="image/docteur1.png" alt="icon" height="60" width="60"/>';
+                        // echo "<img src=' .  $row['photo']  . ".jpg'/>";
+                        if ($row['typeUtilisateur'] == 2) {
+                            echo "  Médecin - ". $row['specialite'] . '<br>';
+                        }
+                        if ($row['typeUtilisateur'] == 3) {
+                            echo "  Administrateur" . '<br>';
+                        }
+                        echo "Nom : " . $row['nom'] . '<br>';
+                        echo "Prenom : " . $row['prenom'] ;
+                        ?>
+                    </p
+                </blockquote>
+            </figure>
+        </div><br><br>
+<?php
 
 
-
-
+    }
+}
 ?>

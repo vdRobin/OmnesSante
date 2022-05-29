@@ -63,10 +63,10 @@ if($_REQUEST['util_type']=="Client"){
   $_REQUEST['util_type']=1;
 }
 if($_REQUEST['util_type']=="Administrateur"){
-  $_REQUEST['util_type']=2;
+  $_REQUEST['util_type']=3;
 }
 if($_REQUEST['util_type']=="Professionnel de santé"){
-  $_REQUEST['util_type']=3;
+  $_REQUEST['util_type']=2;
 }
 
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
@@ -237,6 +237,42 @@ echo "<br />Image Failed to upload.<br />";
               <select class="form-select" id="pays" name="pays" required>
                 <option value="">Choisir...</option>
                 <option>France</option>
+                <option>Allemagne</option>
+                <option>Royaume-Uni</option>
+                <option>Espagne</option>
+                <option>Portugal</option>
+                <option>États-Unis</option>
+                <option>Chine</option>
+                <option>Japon</option>
+                <option>Mexique</option>
+                <option>Afrique Du Sud</option>
+                <option>Brésil</option>
+                <option>Argentine</option>
+                <option>Belgique</option>
+                <option>Pays-Bas</option>
+                <option>Suède</option>
+                <option>Norvège</option>
+                <option>Finlande</option>
+                <option>Italie</option>
+                <option>Ukraine</option>
+                <option>Maroc</option>
+                <option>Laos</option>
+                <option>Australie</option>
+                <option>Cambodge</option>
+                <option>Canada</option>
+                <option>Panama</option>
+                <option>Corée du Nord</option>
+                <option>Corée du Sud</option>
+                <option>Québec</option>
+                <option>Colombie</option>
+                <option>Uruguay</option>
+                <option>Thaïlande</option>
+                <option>Antarctique</option>
+                <option>Suisse</option>
+                <option>Monaco</option>
+                <option>La Gaude</option>
+                <option>Tunisie</option>
+                <option>Kenya</option>
               </select>
               <div class="invalid-feedback">
                 Rentrer un pays valide.
@@ -312,7 +348,7 @@ echo "<br />Image Failed to upload.<br />";
 
             <div class="col-md-3">
               <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" name="exp_carte_credit" placeholder="" required>
+              <input type="text" class="form-control" id="cc-expiration" name="exp_carte_credit" placeholder="MM/AAAA" required>
               <div class="invalid-feedback">
                 La date d'expiration de la carte est requise.
               </div>

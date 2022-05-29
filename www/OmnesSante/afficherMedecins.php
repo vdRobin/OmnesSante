@@ -236,7 +236,7 @@
     ?>
     </select>
     <div class="invalid-feedback">
-      Donner votre statut.
+      Selectionnez votre médecin.
     </div>
 
     <br>
