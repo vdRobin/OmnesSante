@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Scotto celia, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Index</title>
+    <title>Test Calendrier</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
@@ -14,6 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
     
 <style>
       .bd-placeholder-img {
@@ -253,13 +254,12 @@ eventClick:function(event)
       <div class="col-md-7 col-lg-8">
         <h4 class="mb-3">Formulaire</h4>
 
-<form >
-          
+<form method="post" action="load.php">
+           
 
         </form>
 
-        
-        <select class="form-select" id="doctor" name="select_medecin" required>
+ <select class="form-select" id="doctor" name="select_medecin" required>
       <option value="">Choisir...</option>
 
     <?php
@@ -290,7 +290,8 @@ eventClick:function(event)
     <br>
     <br>
  
-    <input id="hiddenInput" name="medID" type="hidden" value="13">
+    <input id="hiddenInput" name="IDvalue" type="hidden" value="13">
+      
       </div>
     </div>
   </main>
