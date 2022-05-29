@@ -133,9 +133,6 @@
           <br> Situé au 37 quai de Grenelle 7015, Paris
           <br> Telephone: +33 01 22 33 44 55
           <br> Email: labo.biologie@omnessante.fr</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Prendre rendez-vous</a>
-          </p>
       </div>
     </div>
   </section>

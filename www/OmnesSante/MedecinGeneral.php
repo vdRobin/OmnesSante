@@ -128,9 +128,6 @@
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Nos Médecins Généralistes</h1>
         <p class="lead text-muted">Vous trouverez ci-dessous la liste de nos practiciens généralistes</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Prendre rendez-vous</a>
-          </p>
       </div>
     </div>
   </section>

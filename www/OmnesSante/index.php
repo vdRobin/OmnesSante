@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.98.0">
   <title>Omnes Santé</title>
-  <link rel="icon" sizes="16x16" href="image/logo.jpg">
+  <link rel="icon" sizes="16x16" href="image/logo1.jpg">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
   <link href="assets/dist/css//bootstrap.min.css" rel="stylesheet">
@@ -256,13 +256,13 @@
           <h2 class="fw-normal">DR.Emma BOUL</h2>
           <p>Ce jeune médecin vient de s'installer dans la région ! Soutenez le via sa cagnotte leechee :)</p>
           <!-- Button to launch a modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)"> Voir
             CV</button>
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button" height="700" width="600" /></div>
+                <div class="modal-body"><img id="image" src="image/cv_emma_boul.png" alt="Click on button" height="700" width="600" /></div>
                 <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
               </div>
             </div>
