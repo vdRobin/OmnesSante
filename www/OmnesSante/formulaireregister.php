@@ -59,15 +59,6 @@
         require('config.php');
         if (isset($_REQUEST['prenom'])){
 
-if($_REQUEST['util_type']=="Client"){
-  $_REQUEST['util_type']=1;
-}
-if($_REQUEST['util_type']=="Administrateur"){
-  $_REQUEST['util_type']=3;
-}
-if($_REQUEST['util_type']=="Professionnel de santé"){
-  $_REQUEST['util_type']=2;
-}
 
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           $prenom = stripslashes($_REQUEST['prenom']);
@@ -94,8 +85,8 @@ if($_REQUEST['util_type']=="Professionnel de santé"){
           $pays = stripslashes($_REQUEST['pays']);
           $pays = mysqli_real_escape_string($conn, $pays);
             // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
-          $type_util = stripslashes($_REQUEST['util_type']);
-          $type_util = mysqli_real_escape_string($conn, $type_util);
+          // $type_util = stripslashes($_REQUEST['util_type']);
+          // $type_util = mysqli_real_escape_string($conn, $type_util);
           // récupérer l'email et supprimer les antislashes ajoutés par le formulaire
           //$upload_cv = stripslashes($_REQUEST['cv']);
           //$upload_cv = mysqli_real_escape_string($conn, $upload_cv);
@@ -120,7 +111,7 @@ if($_REQUEST['util_type']=="Professionnel de santé"){
           //requéte SQL + mot de passe crypté
             $query1= "INSERT INTO `cartebancaire`(`numCarte`, `type`, `proprietaire`, `dateExp`, `CVV`) VALUES ('$num_carte_credit','$type_carte_credit','$nom_carte_credit','$exp_carte_credit','$cvv_carte_credit')";
             $query2 = "INSERT INTO `utilisateur`(`numCarte`, `typeUtilisateur`, `nom`, `prenom`, `ville`, `codePostal`, `pays`, `telephone`, `email`, `carteVitale`, `motDePasse`) 
-            VALUES ('$num_carte_credit','$type_util','$nom_famille','$prenom', '$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
+            VALUES ('$num_carte_credit','1','$nom_famille','$prenom', '$ville','$code_postal','$pays','$telephone','$email','$nb_vitale','".hash('sha256', $password)."')";
 
 
 
@@ -176,7 +167,7 @@ echo "<br />Image Failed to upload.<br />";
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Prénom</label>
-              <input type="text" class="form-control" id="firstName" name="prenom" placeholder="Omnes" value="" required>
+              <input type="text" class="form-control" id="firstName" name="prenom" placeholder="Napoléon" value="" required>
               <div class="invalid-feedback">
                 Un prénom valide est requis.
               </div>
@@ -184,7 +175,7 @@ echo "<br />Image Failed to upload.<br />";
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Nom de famille</label>
-              <input type="text" class="form-control" id="lastName" name="nom_famille" placeholder="Santé" value="" required>
+              <input type="text" class="form-control" id="lastName" name="nom_famille" placeholder="Bonaparte" value="" required>
               <div class="invalid-feedback">
                 Un nom de famille valide est requis..
               </div>
@@ -192,7 +183,7 @@ echo "<br />Image Failed to upload.<br />";
 
             <div class="col-12">
               <label for="email" class="form-label">Email <span class="text-muted"></span></label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="omnes@exemple.com">
+              <input type="email" class="form-control" id="email" name="email" placeholder="napoléon@omnes.com">
               <div class="invalid-feedback">
                 Rentrer une adresse mail valide.
               </div>
@@ -274,17 +265,7 @@ echo "<br />Image Failed to upload.<br />";
               </div>
             </div>
 
-            <div class="col-md-4">
-              <label for="utilisateur" class="form-label">Type d'Utilisateur</label>
-              <select class="form-select" id="state" name="util_type" required>
-                <option value="">Choisir...</option>
-                <option>Client</option>
-                <option>Administrateur</option>
-              </select>
-              <div class="invalid-feedback">
-                Donner votre statut.
-              </div>
-            </div>
+
             
 
           <hr class="my-4">
