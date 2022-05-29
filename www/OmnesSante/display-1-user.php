@@ -1,7 +1,7 @@
-<div class="col-lg-4">
+<div class="col-lg-10">
     <?= '<img src="data:image/jpeg;base64,' . base64_encode($row['photo']) . '" style="float: right;" height="150" width="150"/>' ?>
     <h2 class="fw-normal"><?= "DR. " . $row['prenom'] . " " . $row['nom'] ?></h2>
-    <p><?= $row['ville'] ?></p>
+    <p><?= "Localisation : " .$row['ville'] ?></p>
     <p>
         <?php
 

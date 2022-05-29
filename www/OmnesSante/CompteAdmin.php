@@ -258,9 +258,9 @@
 
           <p><br> Mode Administrateur
           <br>
-          Nom: <?php echo $_SESSION['nom']; ?>
+          Nom : <?php echo $_SESSION['nom']; ?>
           <br>
-          Prenom: <?php echo $_SESSION['prenom']; ?>
+          Prenom : <?php echo $_SESSION['prenom']; ?>
           <br>
         </p>
 

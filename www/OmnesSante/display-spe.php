@@ -1,7 +1,9 @@
 <?php
+if($spevar==0){
 require "config.php";
-$query1 = "SELECT * FROM `utilisateur`as user WHERE user.specialite='Generaliste'";
-$result = mysqli_query($conn, $query1) or die();
+}
+$query2 = "SELECT * FROM `utilisateur`as user WHERE user.specialite='$spe'";
+$result = mysqli_query($conn, $query2) or die();
 $rows = mysqli_num_rows($result);
 
 if ($rows == 0) {

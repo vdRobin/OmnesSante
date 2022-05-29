@@ -223,7 +223,7 @@
             <!--zone d'ombre autour de la fenetre-->
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_pascal_kangoo.png" alt="Click on button" height="700" width="600" /></div>
+                <div class="modal-body"><img id="image" src="cv/cv_pascal_kangoo.png" alt="Click on button" height="700" width="600" /></div>
                 <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
               </div>
             </div>
@@ -243,7 +243,7 @@
           <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_megane_coupe.png" alt="Click on button" height="700" width="600" /></div>
+                <div class="modal-body"><img id="image" src="cv/cv_megane_coupe.png" alt="Click on button" height="700" width="600" /></div>
                 <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
               </div>
             </div>
@@ -262,7 +262,7 @@
           <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-body"><img id="image" src="image/cv_emma_boul.png" alt="Click on button" height="700" width="600" /></div>
+                <div class="modal-body"><img id="image" src="cv/cv_emma_boul.png" alt="Click on button" height="700" width="600" /></div>
                 <div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: rgb(143, 198, 248);border-color: rgb(143, 198, 248)">Fermer</button></div>
               </div>
             </div>
@@ -295,7 +295,6 @@
         </div>
         <div class="col-md-5 order-md-1">
           <img id="image" src="image/pharmacie.jpg" alt="Click on button" width="500" height="500">
-
         </div>
       </div>
 
