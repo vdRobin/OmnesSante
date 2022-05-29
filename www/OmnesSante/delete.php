@@ -6,7 +6,7 @@ if(isset($_POST["id"]))
 {
  $connect = new PDO('mysql:host=localhost;dbname=bddsante', 'root', '');
  $query = "
- DELETE from disponibilites WHERE disponibiliteID=:id
+ DELETE from events WHERE id=:id
  ";
  $statement = $connect->prepare($query);
  $statement->execute(
