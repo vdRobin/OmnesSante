@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
   <html lang="en">
   <head>
@@ -131,6 +132,8 @@
      right:''
    },
 
+   eventOverlap:false,
+
    events: {
     url: 'load.php',
           data: function() { // a function that returns an object
@@ -146,7 +149,7 @@
 
         select: function(start, end, allDay)
         {
-         var title =prompt("Enter Event Title") ;
+         var title =getTitle() ;
          if(title)
          {
           var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
@@ -236,7 +239,7 @@
       }
 
       function getTitle(){
-        return <?= '$_SESSION['nom'].$_SESSION['prenom'];'?>;
+        return '<?= $_SESSION['nom']." ".$_SESSION['prenom'];?>';
       }
 
     </script>

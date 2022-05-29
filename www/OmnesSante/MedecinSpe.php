@@ -148,7 +148,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Prendre rendez vous</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                 </div>
                 <small class="text-muted">disponible dès 8h</small>
               </div>
@@ -166,7 +166,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Prendre rendez vous</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez vous</button>
                 </div>
                 <small class="text-muted">disponible à toute heure</small>
               </div>
@@ -184,7 +184,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Prendre rendez-vous</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez-vous</button>
                 </div>
                 <small class="text-muted">disponible à toute heure</small>
               </div>
@@ -221,7 +221,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Prendre rendez-vous</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez-vous</button>
                   </div>
                   <small class="text-muted">disponible samedi</small>
                 </div>
@@ -240,7 +240,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Prendre rendez-vous</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez-vous</button>
                   </div>
                   <small class="text-muted">disponible à toute heure</small>
                 </div>
@@ -259,7 +259,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Prendre rendez-vous</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez-vous</button>
                   </div>
                   <small class="text-muted">disponible le Lundi et Jeudi</small>
                 </div>
@@ -277,7 +277,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Prendre rendez-vous</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.assign('slct_consultation.php','_self')">Prendre rendez-vous</button>
                 </div>
                 <small class="text-muted">tout les mercredis</small>
               </div>
