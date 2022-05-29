@@ -1,15 +1,15 @@
 <?php
 
-//update.php
+//insert.php
 
 $connect = new PDO('mysql:host=localhost;dbname=bddsante', 'root', '');
 
-if(isset($_POST["id"]))
+if(isset($_POST["title"]))
 {
  $query = "
- UPDATE disponibilites 
- SET titre=:title, heureDebut=:start_event, heureFin=:end_event 
- WHERE disponibiliteID=:id
+ INSERT INTO events 
+ (title, start_event, end_event, medecinID) 
+ VALUES (:title, :start_event, :end_event, :mID)
  ";
  $statement = $connect->prepare($query);
  $statement->execute(
@@ -17,9 +17,11 @@ if(isset($_POST["id"]))
    ':title'  => $_POST['title'],
    ':start_event' => $_POST['start'],
    ':end_event' => $_POST['end'],
-   ':id'   => $_POST['id']
+   ':mID' => $_POST['IDvalue']
+
   )
  );
 }
+
 
 ?>
