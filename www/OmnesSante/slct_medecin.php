@@ -246,9 +246,15 @@
    <link href="form-validation.css" rel="stylesheet">
  </head>
  <body class="bg-light">
+ <header>
+    <?php include "navBarre.php"; ?>
+  </header>
 
   <div class="container ">
     <main>
+    <div class="py-5 text-center ">
+<h2>   </h2>
+</div>
       <div class="py-5 text-center ">
 
         <h2>Disponibilités du médecin</h2>
