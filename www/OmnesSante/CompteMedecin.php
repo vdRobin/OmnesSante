@@ -35,7 +35,15 @@
           center: 'title',
           right: ''
         },
-        events: 'loadDispo.php',
+        events: {
+        url: 'load.php',
+          data: function() { // a function that returns an object
+            return {
+              medecinID: getMedecinID(),
+            };
+
+          }
+        },
         selectable: true,
         selectHelper: true,
 
@@ -121,6 +129,12 @@
 
       });
     });
+
+    function getMedecinID()
+    {
+        return <?= $_SESSION['utilisateurID']?>;
+    }
+
   </script>
 
 

@@ -286,6 +286,7 @@
             <button id="editbtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="ajouter">Ajouter un médecin</button>
             <br>
             <br>
+            <button id="editbtn" class="w-100 btn btn-lg btn-primary" type="submit" name="action" value="xml">Créer un fichier XML pour un médecin</button>
             <form>
 
 
