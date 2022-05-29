@@ -146,7 +146,7 @@
 
         select: function(start, end, allDay)
         {
-         var title = prompt("Enter Event Title");
+         var title = "OCCUPEE";
          if(title)
          {
           var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
