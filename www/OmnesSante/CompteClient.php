@@ -20,6 +20,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
+
   <script>
     $(document).ready(function() {
       var calendar = $('#calendar').fullCalendar({
@@ -27,6 +29,7 @@
         defaultView: 'agendaWeek', // Mode d'affichage par défaut
         height: 500, // Hauteur du calendrier
         aspectRatio: 0.1,
+        locale: 'fr',
 
         header: {
           left: 'prev,next today',
@@ -141,7 +144,7 @@
       }
 
       function getTitle(){
-        return '<?= $_SESSION['nom']." ".$_SESSION['prenom'];?>';
+        return '<?= $_SESSION['nom'].$_SESSION['prenom'];?>';
       }
   </script>
 
@@ -300,47 +303,11 @@
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1"> Rendez-vous avec un de nos médecins. <span class="text-muted">
-              (suivant nos diponibilités).</span></h2>
-          <p class="lead">Remplir les cases à votre disposition </p>
-        </div>
-        <div class="col-md-5">
+          
+          <form method="post" action="slct_consultation.php">
+            <button type="submit" name="sbmtbtn">Prendre un rendez-vous</button>
 
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#eee" />
-          <div id="calendar"></div>
-
-          <div class="col-md-7 col-lg-8">
-            <h4 class="mb-3">Formulaire</h4>
-            <select class="form-select" id="doctor" name="select_medecin"  onchange="loadMedecinEvents()"
-            required>
-            <option value="">Choisir...</option>
-
-            <?php
-              require('config.php');
-
-              $q = "SELECT * FROM `utilisateur` WHERE typeUtilisateur=2";
-              $result = mysqli_query($conn, $q) or die();
-              $rows = mysqli_num_rows($result);
-              if ($result->num_rows > 0) 
-              {
-                while ($row=mysqli_fetch_assoc($result)) {
-
-                  echo "<option value=".$row["utilisateurID"].">".$row["nom"]." ".$row["prenom"]."</option>";
-                }
-              }
-            ?>
-
-          </select>
-          <div class="invalid-feedback">
-            Selectionnez votre médecin.
-          </div>
-
-          <input id="hiddenInput" name="IDvalue" type="hidden" value="13">
-
-          </svg>
+          </form>
         </div>
 
         <!-- /END THE FEATURETTES -->
