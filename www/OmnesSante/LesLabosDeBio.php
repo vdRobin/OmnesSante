@@ -329,7 +329,7 @@
     <p class="float-end mb-1">
       <a href="#">Haut de page</a>
     </p>
-    <p class="mb-1">Album example is &copy; Bootstrap,</p>
+    <p class="mb-1">2022-2223 OMNES SANTE</p>
     
   </div>
 </footer>
