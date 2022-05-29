@@ -2,7 +2,7 @@
 require "config.php"; //config bdd
 
 $query1 = "SELECT * FROM `utilisateur`as user
-WHERE user.nom LIKE '%$query%' OR user.prenom LIKE '%$query%' OR user.specialite LIKE '%$query%'";
+WHERE user.nom LIKE '%$query%' OR user.prenom LIKE '%$query%' OR user.specialite LIKE '%$query%' OR user.ville LIKE '%$query%'";
 
 $result = mysqli_query($conn, $query1) or die();
 $rows = mysqli_num_rows($result);
@@ -32,7 +32,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                             echo "  Administrateur" . '<br>';
                         }
                         echo "Nom : " . $row['nom'] . '<br>';
-                        echo "Prenom : " . $row['prenom'] ;
+                        echo "Prenom : " . $row['prenom']. '<br>' ;
+                        echo "Ville : " . $row['ville'] ;
                         ?>
                     </p
                 </blockquote>

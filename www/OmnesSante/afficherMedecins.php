@@ -156,22 +156,8 @@
           <br><br>
           Nom: <?php echo $_SESSION['prenom'];?>
           <br><br>
-          Courriel: <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($_SESSION['photo'] ).'"/>'?>
-          <br><br>
 
           <div class="col-lg-7 offset-lg-4 ">
-            <svg class="bd-placeholder-img rounded-circle " width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /><a href="formulaireregister.html">
-              <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="140" height="140" color="#fff"
-              class="bi bi-person-circle" viewBox="0 0 16 16">
-              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /><!-- Code SVG pour le logo account -->
-              <path fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-            </svg></a>
-          </svg>
-          
-          <h2 class="fw-normal">VOTRE COMPTE</h2>
 
           <p><br>Voici la liste des médecins :</p>
           <br>
@@ -213,9 +199,6 @@
    <!-- <p><a class="btn btn-secondary" href="#">Modifier le médecin selectionné &raquo;</a></p>
     <p><a class="btn btn-secondary" href="supprimerMedecin.php">Supprimer le médecin &raquo;</a></p>
     <p><a class="btn btn-secondary" href="#">Ajouter un médecin &raquo;</a></p>-->
-
-
-
 
 <form method="post" action="modifierMedecin.php">
     <select class="form-select" id="doctor" name="select_medecin" required>
@@ -284,7 +267,7 @@
 <!-- FOOTER -->
 <footer class="container">
   <p class="float-end"><a href="#">Haut de page</a></p>
-  <p>&copy; 2022–2023 OMNES Santé, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  <p>&copy; 2022–2023 OMNES Santé, Inc.</p>
 </footer>
 </main>
 

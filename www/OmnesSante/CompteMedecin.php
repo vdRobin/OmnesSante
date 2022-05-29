@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 
@@ -13,8 +13,8 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
 
-<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -22,100 +22,105 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale-all.js"></script>
   <script>
-   
-  $(document).ready(function() {
-   var calendar = $('#calendar').fullCalendar({
-    editable:true,
-    defaultView:'agendaWeek', // Mode d'affichage par défaut
-    height: 500, // Hauteur du calendrier
-    aspectRatio: 0.1,
-    locale:'fr',
+    $(document).ready(function() {
+      var calendar = $('#calendar').fullCalendar({
+        editable: true,
+        defaultView: 'agendaWeek', // Mode d'affichage par défaut
+        height: 500, // Hauteur du calendrier
+        aspectRatio: 0.1,
+        locale: 'fr',
 
-    header:{
-     left:'prev,next today',
-     center:'title',
-     right:''
-    },
-    events: 'loadDispo.php',
-    selectable:true,
-    selectHelper:true,
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: ''
+        },
+        events: 'loadDispo.php',
+        selectable: true,
+        selectHelper: true,
 
-    select: function(start, end, allDay)
-    {
-     var title = prompt("Enter Event Title");
-     if(title)
-     {
-      var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-      var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-      $.ajax({
-       url:"insertDispo.php",
-       type:"POST",
-       data:{title:title, start:start, end:end},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Added Successfully");
-       }
-      })
-     }
-    },
-    editable:true,
-    eventResize:function(event)
-    {
-     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-     var title = event.title;
-     var id = event.id;
-     $.ajax({
-      url:"updateDispo.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id},
-      success:function(){
-       calendar.fullCalendar('refetchEvents');
-       alert('Event Update');
-      }
-     })
-    },
+        select: function(start, end, allDay) {
+          var title = prompt("Enter Event Title");
+          if (title) {
+            var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+            var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+            $.ajax({
+              url: "insertDispo.php",
+              type: "POST",
+              data: {
+                title: title,
+                start: start,
+                end: end
+              },
+              success: function() {
+                calendar.fullCalendar('refetchEvents');
+                alert("Added Successfully");
+              }
+            })
+          }
+        },
+        editable: true,
+        eventResize: function(event) {
+          var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+          var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+          var title = event.title;
+          var id = event.id;
+          $.ajax({
+            url: "updateDispo.php",
+            type: "POST",
+            data: {
+              title: title,
+              start: start,
+              end: end,
+              id: id
+            },
+            success: function() {
+              calendar.fullCalendar('refetchEvents');
+              alert('Event Update');
+            }
+          })
+        },
 
-    eventDrop:function(event)
-    {
-     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-     var title = event.title;
-     var id = event.id;
-     $.ajax({
-      url:"updateDispo.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id},
-      success:function()
-      {
-       calendar.fullCalendar('refetchEvents');
-       alert("Event Updated");
-      }
-     });
-    },
+        eventDrop: function(event) {
+          var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+          var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+          var title = event.title;
+          var id = event.id;
+          $.ajax({
+            url: "updateDispo.php",
+            type: "POST",
+            data: {
+              title: title,
+              start: start,
+              end: end,
+              id: id
+            },
+            success: function() {
+              calendar.fullCalendar('refetchEvents');
+              alert("Event Updated");
+            }
+          });
+        },
 
-    eventClick:function(event)
-    {
-     if(confirm("Are you sure you want to remove it?"))
-     {
-      var id = event.id;
-      $.ajax({
-       url:"deleteDispo.php",
-       type:"POST",
-       data:{id:id},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Event Removed");
-       }
-      })
-     }
-    },
+        eventClick: function(event) {
+          if (confirm("Are you sure you want to remove it?")) {
+            var id = event.id;
+            $.ajax({
+              url: "deleteDispo.php",
+              type: "POST",
+              data: {
+                id: id
+              },
+              success: function() {
+                calendar.fullCalendar('refetchEvents');
+                alert("Event Removed");
+              }
+            })
+          }
+        },
 
-   });
-  });
-   
+      });
+    });
   </script>
 
 
@@ -229,7 +234,7 @@
 <body>
 
   <header>
-  <?php include "navBarre.php";?>
+    <?php include "navBarre.php"; ?>
   </header>
 
   <main>
@@ -240,45 +245,28 @@
     <div class="container marketing">
       <br> <br> <br> <br>
       <div class="row">
-        
-        <p> Docteur: 	<?php print $_SESSION['nom']." ".$_SESSION['prenom'];?>
-              <br><br>
-            Spécialité: <?php echo $_SESSION['prenom'];?>
-              <br><br>
-            Laboratoire: <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($_SESSION['photo'] ).'"/>';?>
-             <br><br>
-            CV:
-        <div class="col-lg-7 offset-lg-4 ">
-          <svg class="bd-placeholder-img rounded-circle " width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+        <div class="col-lg-7 offset-lg-2 ">
+ 
+          <svg class="bd-placeholder-img rounded-circle " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
             <rect width="100%" height="100%" fill="#777" /><a href="formulaireregister.html">
-            <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="140" height="140" color="#fff"
-              class="bi bi-person-circle" viewBox="0 0 16 16">
-              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /><!-- Code SVG pour le logo account -->
-              <path fill-rule="evenodd"
-                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-            </svg></a>
+              <svg style="float: right;" xmlns="http://www.w3.org/2000/svg" width="140" height="140" color="#fff" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" /><!-- Code SVG pour le logo account -->
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+              </svg></a>
           </svg>
-          
           <h2 class="fw-normal">VOTRE COMPTE</h2>
 
+         <p> Docteur : <?php print $_SESSION['nom'] . " " . $_SESSION['prenom']; ?>
+            <br>
+            Spécialité : <?php echo $_SESSION['specialite']; ?>
+            <br>
+            Ville : <?php echo $_SESSION['ville']; ?>
+            <br><br>
+          </p>
           <p><br>Veuillez trouvez ci-joint vos informations ainsi que votre emplois du temps.</p>
           <br>
-          <p><a class="btn btn-secondary" href="#">Voir les détails &raquo;</a></p>
-          
-
-        </div><!-- /.col-lg-4 -->
-        <div  class="col-lg-5">
-          
-
-          
-
-          
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          
-
-          
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -289,37 +277,38 @@
 
       <div class="row featurette">
         <div class="col-md-5">
-          <h2 class="featurette-heading fw-normal lh-1"> Emplois du temps. <span class="text-muted">
-          (suivant vos diponibilités).</span></h2>
+          <h2 class="featurette-heading fw-normal lh-1"> Emplois du temps <span class="text-muted">
+              (suivant vos diponibilités)</span></h2>
           <p class="lead">Modifier si vous avez un empêchement </p>
         </div>
         <div class="col-md-7">
-          
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" /><div id="calendar"></div>
+
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#eee" />
+          <div id="calendar"></div>
           </svg>
 
-        
-        
-      </div>
-
-      <hr class="featurette-divider">
-
-      
-        
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-    </div><!-- /.container -->
 
 
-    <!-- FOOTER -->
-    <footer class="container">
-      <p class="float-end"><a href="#">Haut de page</a></p>
-      <p>&copy; 2022–2023 OMNES Santé, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
+        </div>
+
+        <hr class="featurette-divider">
+
+
+
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-end"><a href="#">Haut de page</a></p>
+        <p>&copy; 2022–2023 OMNES Santé, Inc.</p>
+      </footer>
   </main>
 
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
